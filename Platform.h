@@ -1,9 +1,7 @@
-#include "CWall.h"
-
-#define WIDTH 50
-#define HEIGHT 50
-#define LTX(x) x - WIDTH / 2	// x of Left Top point
-#define LTZ(z) z + HEIGHT / 2	// z of Left Top point
+#define PLATFORMWIDTH 50
+#define PLATFORMHEIGHT 50
+#define LTX(x) x - PLATFORMWIDTH / 2	// x of Left Top point
+#define LTZ(z) z + PLATFORMHEIGHT / 2	// z of Left Top point
 
 class Platform {
 private:
