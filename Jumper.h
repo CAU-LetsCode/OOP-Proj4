@@ -12,7 +12,7 @@ using std::string;
 
 class Jumper {
 private:
-	float x, z;	// center cord
+	float x, y, z;	// center cord
 	float v_x, v_z;
 	float pre_x, pre_z;
 
@@ -39,11 +39,6 @@ public:
 	const D3DXMATRIX& getLocalTransform(void) const;
 	void setLocalTransform(const D3DXMATRIX& mLocal);
 	D3DXVECTOR3 getPosition() const;
-	void adjustPosition(Jumper& jumper);
+	void adjustPosition(Jumper& jumper);	// todo
 	void setPosition(float x, float y, float z);
-
-	void disable() noexcept;
-	void enable() noexcept;
-	int getDisableTurn() const noexcept;
-	bool isDisabled() const noexcept;
 };
