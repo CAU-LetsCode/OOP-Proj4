@@ -3,6 +3,11 @@
 #include "d3dUtility.h"
 #include "Platform.h"
 
+#define JUMPERWIDTH	50
+#define JUMPERHEIGHT 50
+#define LBX(x) x - JUMPERWIDTH / 2	// x of Left Bottom point
+#define LBZ(z) z - JUMPERHEIGHT / 2	// z of Left Botton point
+
 using std::string;
 
 class Jumper {

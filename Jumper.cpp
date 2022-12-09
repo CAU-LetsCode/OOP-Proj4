@@ -71,19 +71,13 @@ bool Jumper::hasIntersected(Platform& platform) {
 	D3DXVECTOR3 cord = this->getPosition();
 	D3DXVECTOR3 platform_cord = platform.getPosition();
 
-	double xDistance = cord.x - platform_cord.x;
-	double zDistance = cord.z - platform_cord.z;
+	double xDistance = cord.x - LTX(platform_cord.x);
+	double zDistance = cord.z - LTZ(platform_cord.z);
 
-	if (0 < xDistance && xDistance < WIDTH) {
-		
-	}
-
-	double xDistance = abs((cord.x - platform_cord.x) * (cord.x - platform_cord.x));
-	double zDistance = abs((cord.z - platform_cord.z) * (cord.z - platform_cord.z));
-	double totalDistance = sqrt(xDistance + zDistance);
-
-	if (totalDistance < (this->getRadius() + ball.getRadius())) {
-		return true;
+	if (-JUMPERWIDTH < xDistance && xDistance < PLATFORMWIDTH) {
+		if (0 < zDistance && zDistance < PLATFORMHEIGHT) {
+			return true;
+		}
 	}
 
 	return false;
