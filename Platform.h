@@ -2,8 +2,8 @@
 
 #define WIDTH 50
 #define HEIGHT 50
-#define CENTERX(x) x-WIDTH/2	// 
-#define CENTERZ(z) z-HEIGHT/2	// 
+#define LTX(x) x - WIDTH / 2	// x of Left Top point
+#define LTZ(z) z + HEIGHT / 2	// z of Left Top point
 
 class Platform {
 private:
