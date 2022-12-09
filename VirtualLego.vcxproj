@@ -150,6 +150,7 @@
     <ClCompile Include="dxutil.cpp" />
     <ClCompile Include="FoulManager.cpp" />
     <ClCompile Include="Jumper.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="status.cpp" />
     <ClCompile Include="TurnManager.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="dxutil.h" />
     <ClInclude Include="FoulManager.h" />
     <ClInclude Include="Jumper.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="status.h" />
     <ClInclude Include="TurnManager.h" />

@@ -1,12 +1,13 @@
 #include <string>
 
 #include "d3dUtility.h"
+#include "Platform.h"
 
 using std::string;
 
 class Jumper {
 private:
-	float x, z;
+	float x, z;	// center cord
 	float v_x, v_z;
 	float pre_x, pre_z;
 
