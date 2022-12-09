@@ -84,35 +84,44 @@ bool Jumper::hasIntersected(Platform& platform) {
 }
 
 double Jumper::getVelocity_X() {
-
+	return v_x;
 }
 
 double Jumper::getVelocity_Z() {
-
+	return v_z;
 }
 
 void Jumper::setPower(double vx, double vz) {
-
+	v_x = vx;
+	v_z = vz;
 }
 
 const D3DXMATRIX& Jumper::getLocalTransform(void) const {
-
+	return m_mLocal;
 }
 
 void Jumper::setLocalTransform(const D3DXMATRIX& mLocal) {
-
+	m_mLocal = mLocal;
 }
 
 D3DXVECTOR3 Jumper::getPosition() const {
-
+	D3DXVECTOR3 org(x, y, z);
+	return org;
 }
 
 void Jumper::adjustPosition(Jumper& jumper) {
-
+	// todo
 }
 
 void Jumper::setPosition(float x, float y, float z) {
+	D3DXMATRIX m;
 
+	this->x = x;
+	this->y = y;
+	this->z = z;
+
+	D3DXMatrixTranslation(&m, x, y, z);
+	setLocalTransform(m);
 }
 
 LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
@@ -140,20 +149,4 @@ LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	}
 
 	return texMesh;
-}
-
-void Jumper::disable() noexcept {
-
-}
-
-void Jumper::enable() noexcept {
-
-}
-
-int Jumper::getDisableTurn() const noexcept {
-
-}
-
-bool Jumper::isDisabled() const noexcept {
-
 }
