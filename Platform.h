@@ -11,7 +11,7 @@ private:
 	D3DMATERIAL9 m_mtrl;
 	ID3DXMesh* m_pBoundMesh;
 
-	float x, z;	// center point of box
+	float x, y, z;	// center point of box
 	float width, depth, height;
 
 	void setLocalTransform(const D3DXMATRIX& mLocal);
