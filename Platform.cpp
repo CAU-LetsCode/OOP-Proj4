@@ -74,6 +74,7 @@ void Platform::setPosition(float x, float y, float z) {
 
 float Platform::getHeight(void) const {
     //todo
+    return PLATFORMHEIGHT;
 }
 
 void Platform::setLocalTransform(const D3DXMATRIX& mLocal) { m_mLocal = mLocal; }
