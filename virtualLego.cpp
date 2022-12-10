@@ -47,7 +47,7 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-double g_camera_pos[3] = { 50.0, 50.0, 50.0 };
+double g_camera_pos[3] = { 0.0, 50.0, -50.0 };
 
 // window size
 const int Width = 1024;
@@ -82,7 +82,7 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
-	if (!g_platform.create(Device, 0, 0, 5, 10, 15, d3d::GREEN)) return false;
+	if (!g_platform.create(Device, 0, 0, 2, 0.1, 1, d3d::GREEN)) return false;
 	g_platform.setPosition(0, 0, 0);
 
 	// light setting 
@@ -92,7 +92,7 @@ bool Setup() {
 	lit.Diffuse = d3d::WHITE;
 	lit.Specular = d3d::WHITE * 1.0f;
 	lit.Ambient = d3d::WHITE * 1.0f;
-	lit.Position = D3DXVECTOR3(0.0f, 3.0f, 0.0f);
+	lit.Position = D3DXVECTOR3(0.0f, 10.0f, 0.0f);
 	lit.Range = 100.0f;
 	lit.Attenuation0 = 0.0f;
 	lit.Attenuation1 = 0.9f;
@@ -102,9 +102,9 @@ bool Setup() {
 	if (false == g_light.create(Device, lit, radius)) return false;
 
 	// Position and aim the camera.
-	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
+	D3DXVECTOR3 pos(0, 10, 0);
 	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
-	D3DXVECTOR3 up(0.0f, 2.0f, 0.0f);
+	D3DXVECTOR3 up(0.0f, 0.0f, -1.0f);	// camera's rotation
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
 	Device->SetTransform(D3DTS_VIEW, &g_mView);
 
@@ -219,8 +219,8 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				case WORLD_MOVE:
 					dx = (old_x - new_x) * 0.01f;
 					dy = (old_y - new_y) * 0.01f;
-					D3DXMatrixRotationY(&mX, dx);
-					D3DXMatrixRotationX(&mY, dy);
+					D3DXMatrixRotationZ(&mX, -dx);
+					D3DXMatrixRotationX(&mY, -dy);
 					g_mWorld = g_mWorld * mX * mY;
 
 					break;
