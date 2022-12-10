@@ -61,7 +61,6 @@ void Jumper::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 
 	pDevice->SetTransform(D3DTS_WORLD, &mWorld);
 	pDevice->MultiplyTransform(D3DTS_WORLD, &m_mLocal);
-	//pDevice->MultiplyTransform(D3DTS_WORLD, &ballRoll);
 	pDevice->SetTexture(0, Tex);
 	pDevice->SetMaterial(&m_mtrl);
 	m_pJumperMesh->DrawSubset(0);
