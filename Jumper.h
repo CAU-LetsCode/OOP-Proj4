@@ -35,9 +35,10 @@ public:
 	void destroy(void);
 	void draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld);
 	bool hasIntersected(Platform& platform);
+	void jumperUpdate(float timeDiff);
 	double getVelocity_X();
 	double getVelocity_Z();
-	void setPower(double vx, double vz);
+	void setVelocity(double vx, double vz);
 	const D3DXMATRIX& getLocalTransform(void) const;
 	void setLocalTransform(const D3DXMATRIX& mLocal);
 	D3DXVECTOR3 getPosition() const;

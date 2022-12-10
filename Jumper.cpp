@@ -1,6 +1,7 @@
 #include "Jumper.h"
 
 #define FVF_VERTEX D3DFVF_XYZ|D3DFVF_NORMAL|D3DFVF_TEX1
+#define GRAVITY 0.4f
 
 struct _VERTEX {
 	D3DXVECTOR3 pos;
@@ -82,6 +83,22 @@ bool Jumper::hasIntersected(Platform& platform) {
 	return false;
 }
 
+void Jumper::jumperUpdate(float timeDiff) {
+	const float TIME_SCALE = 3.3;
+	D3DXVECTOR3 cord = this->getPosition();
+
+	this->x = cord.x;
+	this->z = cord.z;
+
+	float tX = cord.x + TIME_SCALE * timeDiff * v_x;
+	float tZ = cord.z + TIME_SCALE * timeDiff * v_z;
+	this->setPosition(tX, cord.y, tZ);
+
+	v_z -= TIME_SCALE * timeDiff * GRAVITY;
+
+	setVelocity(v_x, v_z);
+}
+
 double Jumper::getVelocity_X() {
 	return v_x;
 }
@@ -90,7 +107,7 @@ double Jumper::getVelocity_Z() {
 	return v_z;
 }
 
-void Jumper::setPower(double vx, double vz) {
+void Jumper::setVelocity(double vx, double vz) {
 	v_x = vx;
 	v_z = vz;
 }
@@ -125,7 +142,7 @@ void Jumper::setPosition(float x, float y, float z) {
 
 LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	LPD3DXMESH mesh;
-	if (FAILED(D3DXCreateBox(pDev, 1, 1, 1, &mesh, NULL)))
+	if (FAILED(D3DXCreateBox(pDev, 0.1, 0.01, 0.1, &mesh, NULL)))
 		return nullptr;
 
 	LPD3DXMESH texMesh;
