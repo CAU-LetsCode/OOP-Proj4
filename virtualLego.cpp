@@ -35,7 +35,7 @@
 
 #include "Platform.h"
 
-#define NUM_PLATFORM 5
+#define NUM_PLATFORM 1
 
 using std::array;
 
@@ -88,7 +88,7 @@ bool Setup() {
 	if (!g_platform.create(Device, 10, 0.1, 10, d3d::GREEN)) return false;
 	g_platform.setPosition(0, -5, 0);
 
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, 2, 0.5, 0.5, d3d::RED)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
 	}
@@ -150,7 +150,7 @@ bool Display(float timeDelta)
 		// draw platforms
 		g_platform.draw(Device, g_mWorld);
 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < NUM_PLATFORM; i++) {
 			g_platforms[i].draw(Device, g_mWorld);
 		}
 
