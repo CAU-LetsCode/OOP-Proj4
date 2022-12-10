@@ -16,7 +16,7 @@ private:
 	float v_x, v_z;
 	float pre_x, pre_z;
 
-	string jumperImageFileName = string();
+	string jumperImageFileName = "0";
 
 	IDirect3DTexture9* Tex = nullptr;
 	LPD3DXMESH _createMappedBox(IDirect3DDevice9* pDev);

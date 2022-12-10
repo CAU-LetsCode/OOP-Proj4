@@ -125,7 +125,7 @@ void Jumper::setPosition(float x, float y, float z) {
 
 LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	LPD3DXMESH mesh;
-	if (FAILED(D3DXCreateSphere(pDev, 50, 50, 50, &mesh, NULL)))
+	if (FAILED(D3DXCreateBox(pDev, 1, 1, 1, &mesh, NULL)))
 		return nullptr;
 
 	LPD3DXMESH texMesh;

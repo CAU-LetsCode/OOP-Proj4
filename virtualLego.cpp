@@ -34,6 +34,7 @@
 #include "d3dfont.h"
 
 #include "Platform.h"
+#include "Jumper.h"
 
 #define NUM_PLATFORM 1
 
@@ -61,6 +62,7 @@ IDirect3DDevice9* Device = NULL;
 
 Platform g_platform;
 vector<Platform> g_platforms(NUM_PLATFORM);
+Jumper g_jumper;
 CLight g_light;
 
 Player players[2] = { Player(1), Player(2) };
@@ -92,6 +94,10 @@ bool Setup() {
 		if (!g_platforms[i].create(Device, 2, 0.5, 0.5, d3d::RED)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
 	}
+
+	// create jumper
+	if (!g_jumper.create(Device)) return false;
+	g_jumper.setPosition(0, 0, 3);
 
 	// light setting 
 	D3DLIGHT9 lit;
@@ -158,7 +164,7 @@ bool Display(float timeDelta)
 		// todo
 
 		// draw jumper
-		// todo
+		g_jumper.draw(Device, g_mWorld);
 		
 		//g_light.draw(Device); // 효과는 주되, 화면상에서 가려줌
 

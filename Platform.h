@@ -1,3 +1,6 @@
+#ifndef _PLATFORM
+#define _PLATFORM
+
 #include "d3dUtility.h"
 
 #define PLATFORMWIDTH 50
@@ -28,3 +31,5 @@ public:
     //void adjustPosition(CSphere& ball);   //todo
     D3DXVECTOR3 getPosition() const;
 };
+
+#endif
