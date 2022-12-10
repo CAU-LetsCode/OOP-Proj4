@@ -35,6 +35,8 @@
 
 #include "Platform.h"
 
+#define NUM_PLATFORM 5
+
 using std::array;
 
 // -----------------------------------------------------------------------------
@@ -58,6 +60,7 @@ HWND window;
 IDirect3DDevice9* Device = NULL;
 
 Platform g_platform;
+vector<Platform> g_platforms(NUM_PLATFORM);
 CLight g_light;
 
 Player players[2] = { Player(1), Player(2) };
@@ -82,8 +85,13 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
-	if (!g_platform.create(Device, 0, 0, 2, 0.1, 1, d3d::GREEN)) return false;
-	g_platform.setPosition(0, 0, 0);
+	if (!g_platform.create(Device, 10, 0.1, 10, d3d::GREEN)) return false;
+	g_platform.setPosition(0, -5, 0);
+
+	for (int i = 0; i < 1; i++) {
+		if (!g_platforms[i].create(Device, 2, 0.5, 0.5, d3d::RED)) return false;
+		g_platforms[i].setPosition(0, 0, 0);
+	}
 
 	// light setting 
 	D3DLIGHT9 lit;
@@ -141,6 +149,10 @@ bool Display(float timeDelta)
 
 		// draw platforms
 		g_platform.draw(Device, g_mWorld);
+
+		for (int i = 0; i < 1; i++) {
+			g_platforms[i].draw(Device, g_mWorld);
+		}
 
 		// intersect between jumper and platform
 		// todo
