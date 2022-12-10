@@ -61,7 +61,6 @@ void Jumper::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 
 	pDevice->SetTransform(D3DTS_WORLD, &mWorld);
 	pDevice->MultiplyTransform(D3DTS_WORLD, &m_mLocal);
-	//pDevice->MultiplyTransform(D3DTS_WORLD, &ballRoll);
 	pDevice->SetTexture(0, Tex);
 	pDevice->SetMaterial(&m_mtrl);
 	m_pJumperMesh->DrawSubset(0);
@@ -126,7 +125,7 @@ void Jumper::setPosition(float x, float y, float z) {
 
 LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	LPD3DXMESH mesh;
-	if (FAILED(D3DXCreateSphere(pDev, 50, 50, 50, &mesh, NULL)))
+	if (FAILED(D3DXCreateBox(pDev, 1, 1, 1, &mesh, NULL)))
 		return nullptr;
 
 	LPD3DXMESH texMesh;

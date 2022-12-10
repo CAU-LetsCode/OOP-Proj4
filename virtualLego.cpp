@@ -34,6 +34,9 @@
 #include "d3dfont.h"
 
 #include "Platform.h"
+#include "Jumper.h"
+
+#define NUM_PLATFORM 1
 
 using std::array;
 
@@ -47,7 +50,7 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-double g_camera_pos[3] = { 0.0, 50.0, -50.0 };
+float g_camera_pos[3] = { 0.0f, 10.0f, 0.0f };
 
 // window size
 const int Width = 1024;
@@ -58,6 +61,8 @@ HWND window;
 IDirect3DDevice9* Device = NULL;
 
 Platform g_platform;
+vector<Platform> g_platforms(NUM_PLATFORM);
+Jumper g_jumper;
 CLight g_light;
 
 Player players[2] = { Player(1), Player(2) };
@@ -82,8 +87,17 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
-	if (!g_platform.create(Device, 0, 0, 2, 0.1, 1, d3d::GREEN)) return false;
-	g_platform.setPosition(0, 0, 0);
+	if (!g_platform.create(Device, 10, 0.1, 10, d3d::GREEN)) return false;
+	g_platform.setPosition(0, -5, 0);
+
+	for (int i = 0; i < NUM_PLATFORM; i++) {
+		if (!g_platforms[i].create(Device, 2, 0.5, 0.5, d3d::RED)) return false;
+		g_platforms[i].setPosition(0, 0, 0);
+	}
+
+	// create jumper
+	if (!g_jumper.create(Device)) return false;
+	g_jumper.setPosition(0, 0, 3);
 
 	// light setting 
 	D3DLIGHT9 lit;
@@ -92,7 +106,7 @@ bool Setup() {
 	lit.Diffuse = d3d::WHITE;
 	lit.Specular = d3d::WHITE * 1.0f;
 	lit.Ambient = d3d::WHITE * 1.0f;
-	lit.Position = D3DXVECTOR3(0.0f, 10.0f, 0.0f);
+	lit.Position = D3DXVECTOR3(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	lit.Range = 100.0f;
 	lit.Attenuation0 = 0.0f;
 	lit.Attenuation1 = 0.9f;
@@ -102,9 +116,9 @@ bool Setup() {
 	if (false == g_light.create(Device, lit, radius)) return false;
 
 	// Position and aim the camera.
-	D3DXVECTOR3 pos(0, 10, 0);
+	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
-	D3DXVECTOR3 up(0.0f, 0.0f, -1.0f);	// camera's rotation
+	D3DXVECTOR3 up(0.0f, 0.0f, 1.0f);	// camera's rotation
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
 	Device->SetTransform(D3DTS_VIEW, &g_mView);
 
@@ -142,11 +156,15 @@ bool Display(float timeDelta)
 		// draw platforms
 		g_platform.draw(Device, g_mWorld);
 
+		for (int i = 0; i < NUM_PLATFORM; i++) {
+			g_platforms[i].draw(Device, g_mWorld);
+		}
+
 		// intersect between jumper and platform
 		// todo
 
 		// draw jumper
-		// todo
+		g_jumper.draw(Device, g_mWorld);
 		
 		//g_light.draw(Device); // 효과는 주되, 화면상에서 가려줌
 
@@ -219,8 +237,8 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				case WORLD_MOVE:
 					dx = (old_x - new_x) * 0.01f;
 					dy = (old_y - new_y) * 0.01f;
-					D3DXMatrixRotationZ(&mX, -dx);
-					D3DXMatrixRotationX(&mY, -dy);
+					D3DXMatrixRotationZ(&mX, dx);
+					D3DXMatrixRotationX(&mY, dy);
 					g_mWorld = g_mWorld * mX * mY;
 
 					break;
