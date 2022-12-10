@@ -47,7 +47,7 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-double g_camera_pos[3] = { 0.0, 50.0, -50.0 };
+float g_camera_pos[3] = { 0.0f, 10.0f, 0.0f };
 
 // window size
 const int Width = 1024;
@@ -102,7 +102,7 @@ bool Setup() {
 	if (false == g_light.create(Device, lit, radius)) return false;
 
 	// Position and aim the camera.
-	D3DXVECTOR3 pos(0, 10, 0);
+	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 up(0.0f, 0.0f, -1.0f);	// camera's rotation
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
