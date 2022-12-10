@@ -92,7 +92,7 @@ bool Setup() {
 	lit.Diffuse = d3d::WHITE;
 	lit.Specular = d3d::WHITE * 1.0f;
 	lit.Ambient = d3d::WHITE * 1.0f;
-	lit.Position = D3DXVECTOR3(0.0f, 10.0f, 0.0f);
+	lit.Position = D3DXVECTOR3(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	lit.Range = 100.0f;
 	lit.Attenuation0 = 0.0f;
 	lit.Attenuation1 = 0.9f;
