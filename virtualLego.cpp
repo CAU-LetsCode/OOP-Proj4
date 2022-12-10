@@ -118,7 +118,7 @@ bool Setup() {
 	// Position and aim the camera.
 	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
-	D3DXVECTOR3 up(0.0f, 0.0f, -1.0f);	// camera's rotation
+	D3DXVECTOR3 up(0.0f, 0.0f, 1.0f);	// camera's rotation
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
 	Device->SetTransform(D3DTS_VIEW, &g_mView);
 
@@ -237,8 +237,8 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				case WORLD_MOVE:
 					dx = (old_x - new_x) * 0.01f;
 					dy = (old_y - new_y) * 0.01f;
-					D3DXMatrixRotationZ(&mX, -dx);
-					D3DXMatrixRotationX(&mY, -dy);
+					D3DXMatrixRotationZ(&mX, dx);
+					D3DXMatrixRotationX(&mY, dy);
 					g_mWorld = g_mWorld * mX * mY;
 
 					break;
