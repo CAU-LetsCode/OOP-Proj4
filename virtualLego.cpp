@@ -37,6 +37,9 @@
 #include "Jumper.h"
 
 #define NUM_PLATFORM 1
+#define PLATFORMWIDTH 2
+#define PLATFORMHEIGHT 0.5
+#define PLATFORMDEPTH 0.5
 
 using std::array;
 
@@ -62,6 +65,7 @@ IDirect3DDevice9* Device = NULL;
 
 Platform g_platform;
 vector<Platform> g_platforms(NUM_PLATFORM);
+vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
 CLight g_light;
 
@@ -91,7 +95,7 @@ bool Setup() {
 	g_platform.setPosition(0, -5, 0);
 
 	for (int i = 0; i < NUM_PLATFORM; i++) {
-		if (!g_platforms[i].create(Device, 2, 0.5, 0.5, d3d::RED)) return false;
+		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::RED)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
 	}
 
