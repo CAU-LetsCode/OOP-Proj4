@@ -30,9 +30,6 @@
 #include "CHandSphere.h"
 #include "Status.h"
 #include "Player.h"
-#include "DisplayGameStatus.h"
-#include "FoulManager.h"
-#include "TurnManager.h"
 #include "d3dUtility.h"
 #include "d3dfont.h"
 
@@ -50,7 +47,7 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-double g_camera_pos[3] = { 0.0, 5.0, -8.0 };
+double g_camera_pos[3] = { 50.0, 50.0, 50.0 };
 
 // window size
 const int Width = 1024;
@@ -62,6 +59,10 @@ IDirect3DDevice9* Device = NULL;
 
 Platform g_platform;
 CLight g_light;
+
+Player players[2] = { Player(1), Player(2) };
+vector<Player*> playerVec = { &players[0], &players[1] };
+Status status(playerVec);
 
 // -----------------------------------------------------------------------------
 // Functions
@@ -81,7 +82,7 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
-	if (!g_platform.create(Device, 0, 0, 10, 30, 50, d3d::GREEN)) return false;
+	if (!g_platform.create(Device, 0, 0, 5, 10, 15, d3d::GREEN)) return false;
 	g_platform.setPosition(0, 0, 0);
 
 	// light setting 
@@ -101,7 +102,7 @@ bool Setup() {
 	if (false == g_light.create(Device, lit, radius)) return false;
 
 	// Position and aim the camera.
-	D3DXVECTOR3 pos(0.0f, 5.0f, -8.0f);
+	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
 	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 up(0.0f, 2.0f, 0.0f);
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
@@ -137,6 +138,9 @@ bool Display(float timeDelta)
 	{
 		Device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00afafaf, 1.0f, 0);
 		Device->BeginScene();
+
+		// draw platforms
+		g_platform.draw(Device, g_mWorld);
 
 		// intersect between jumper and platform
 		// todo
@@ -226,6 +230,14 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			old_x = new_x;
 			old_y = new_y;
 
+		}
+		else {
+			isReset = true;
+
+			old_x = new_x;
+			old_y = new_y;
+
+			move = WORLD_MOVE;
 		}
 		break;
 	}
