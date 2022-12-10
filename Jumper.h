@@ -1,7 +1,9 @@
-#include <string>
+#ifndef _JUMPER_
+#define _JUMPER_
 
 #include "d3dUtility.h"
 #include "Platform.h"
+#include "string"
 
 #define JUMPERWIDTH	50
 #define JUMPERHEIGHT 50
@@ -16,7 +18,7 @@ private:
 	float v_x, v_z;
 	float pre_x, pre_z;
 
-	string jumperImageFileName = "0";
+	string jumperImageFileName = "3";
 
 	IDirect3DTexture9* Tex = nullptr;
 	LPD3DXMESH _createMappedBox(IDirect3DDevice9* pDev);
@@ -43,3 +45,5 @@ public:
 	void adjustPosition(Jumper& jumper);	// todo
 	void setPosition(float x, float y, float z);
 };
+
+#endif

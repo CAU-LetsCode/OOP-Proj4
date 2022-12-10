@@ -270,7 +270,6 @@ int WINAPI WinMain(HINSTANCE hinstance,
 	PSTR cmdLine,
 	int showCmd)
 {
-	srand(static_cast<unsigned int>(time(NULL)));
 
 	if (!d3d::InitD3D(hinstance,
 		Width, Height, true, D3DDEVTYPE_HAL, &Device))
