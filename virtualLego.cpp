@@ -37,9 +37,9 @@
 #include "Jumper.h"
 
 #define NUM_PLATFORM 1
-#define PLATFORMWIDTH 2
-#define PLATFORMHEIGHT 0.5
-#define PLATFORMDEPTH 0.5
+#define PLATFORMWIDTH 0.2
+#define PLATFORMHEIGHT 0.05
+#define PLATFORMDEPTH 0.05
 
 using std::array;
 
@@ -53,7 +53,7 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-float g_camera_pos[3] = { 0.0f, 10.0f, 0.0f };
+float g_camera_pos[3] = { 0.0f, 3.0f, 0.0f };
 
 // window size
 const int Width = 1024;
@@ -63,7 +63,6 @@ HWND window;
 
 IDirect3DDevice9* Device = NULL;
 
-Platform g_platform;
 vector<Platform> g_platforms(NUM_PLATFORM);
 vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
@@ -91,9 +90,6 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
-	if (!g_platform.create(Device, 10, 0.1, 10, d3d::GREEN)) return false;
-	g_platform.setPosition(0, -5, 0);
-
 	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::RED)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
@@ -101,7 +97,8 @@ bool Setup() {
 
 	// create jumper
 	if (!g_jumper.create(Device)) return false;
-	g_jumper.setPosition(0, 0, 3);
+	g_jumper.setPosition(0, 0, 1);
+	g_jumper.setVelocity(0, 0);
 
 	// light setting 
 	D3DLIGHT9 lit;
@@ -142,7 +139,9 @@ bool Setup() {
 // set of destroy function
 void Cleanup(void)
 {
-	g_platform.destroy();
+	for (int i = 0; i < NUM_PLATFORM; i++) {
+		g_platforms[i].destroy();
+	}
 	g_light.destroy();
 }
 
@@ -158,14 +157,12 @@ bool Display(float timeDelta)
 		Device->BeginScene();
 
 		// draw platforms
-		g_platform.draw(Device, g_mWorld);
-
 		for (int i = 0; i < NUM_PLATFORM; i++) {
 			g_platforms[i].draw(Device, g_mWorld);
 		}
 
 		// intersect between jumper and platform
-		// todo
+		g_jumper.jumperUpdate(timeDelta);
 
 		// draw jumper
 		g_jumper.draw(Device, g_mWorld);
