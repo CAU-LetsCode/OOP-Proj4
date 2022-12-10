@@ -9,7 +9,10 @@ Platform::Platform(void) {
 }
 
 Platform::Platform(float iwidth, float iheight, float idepth, D3DXCOLOR color) {
-    Platform();
+    D3DXMatrixIdentity(&m_mLocal);
+    ZeroMemory(&m_mtrl, sizeof(m_mtrl));
+    x, z = 0;
+
     m_mtrl.Ambient = color;
     m_mtrl.Diffuse = color;
     m_mtrl.Specular = color;
