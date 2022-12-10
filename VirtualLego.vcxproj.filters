@@ -129,4 +129,57 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\OOP-proj3\image\0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\OOP-proj3\image\blue.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
