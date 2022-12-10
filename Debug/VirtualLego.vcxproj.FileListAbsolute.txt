@@ -1,2 +1,3 @@
 C:\Users\mj043\Desktop\새 폴더\Debug\VirtualLego.exe
 C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj3\Debug\VirtualLego.exe
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\Debug\VirtualLego.exe
