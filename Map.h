@@ -1,18 +1,18 @@
-#ifndef _MAP_
 #include "Platform.h"
 #include "vector"
 
+using namespace std;
+
 class Map {
-private :
+private:
 	int num_platform;
+
+public:
 	vector<Platform> g_platforms;
-	
-public :
+
 	Map(int num_platform);
 	~Map(void);
-	
-	bool drawMap1(IDirect3DDevice9* Device);
+
+	void setPosition(int i, float x, float y, float z);
 	void destroy(void);
 };
-
-#endif
