@@ -27,8 +27,8 @@ public:
 	bool create(IDirect3DDevice9* pDevice);
 	void destroy(void);
 	void draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld);
-	bool hasIntersected(Jumper& ball);
-	void hitBy(Jumper& ball);
+	bool hasIntersected(Jumper& jumper);
+	void hitBy(Jumper& jumper);
 	const D3DXMATRIX& getLocalTransform(void) const;
 	void setLocalTransform(const D3DXMATRIX& mLocal);
 	void setPosition(float x, float y, float z);
