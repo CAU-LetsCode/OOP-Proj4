@@ -37,6 +37,7 @@
 #include "Jumper.h"
 #include "DisplayText.h"
 #include "Map.h"
+#include "Goal.h"
 
 
 
@@ -78,6 +79,7 @@ Status status(playerVec);
 DisplayText displayText(Width, Height);
 
 Map map1(16), map2(16), map3(16);
+Goal goal1, goal2, goal3;
 
 // -----------------------------------------------------------------------------
 // Functions
@@ -112,6 +114,8 @@ bool Setup() {
     map1.setPosition(14, -0.5, 0, 2.1);
     map1.setPosition(15, +0.0, 0, 2.4);
 
+    goal1.setPosition(+0.0, 0, 2.8);
+
     // create platform
 
     /*for (int i = 0; i < NUM_PLATFORM; i++) {
@@ -122,6 +126,7 @@ bool Setup() {
     for (int i = 0; i < NUM_PLATFORM; i++) {
         map1.g_platforms[i].create(Device, d3d::GREEN);
     }
+    goal1.create(Device);
 
     // create jumper
     if (!g_jumper.create(Device)) return false;
@@ -173,6 +178,7 @@ void Cleanup(void)
     }
     g_light.destroy();
     displayText.destroy();
+    goal1.destroy();
 }
 
 // Update
@@ -193,6 +199,8 @@ bool Display(float timeDelta)
             //g_platforms[i].draw(Device, g_mWorld);
             map1.g_platforms[i].draw(Device, g_mWorld);
         }
+
+        
 
         // intersect between jumper and platform
         if (isGameOver) {
@@ -223,6 +231,9 @@ bool Display(float timeDelta)
 
         // draw jumper
         g_jumper.draw(Device, g_mWorld);
+        
+        // draw goal
+        goal1.draw(Device, g_mWorld);
 
         D3DXVECTOR3 m = g_jumper.getPosition();
         D3DXVECTOR3 pos(m.x, 3.0f, m.z);

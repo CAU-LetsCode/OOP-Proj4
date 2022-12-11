@@ -149,6 +149,7 @@
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="DisplayGameStatus.cpp" />
     <ClCompile Include="dxutil.cpp" />
+    <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Jumper.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Platform.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="DisplayGameStatus.h" />
     <ClInclude Include="dxutil.h" />
+    <ClInclude Include="Goal.h" />
     <ClInclude Include="Jumper.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Platform.h" />
