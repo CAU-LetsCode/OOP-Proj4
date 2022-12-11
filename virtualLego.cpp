@@ -51,7 +51,6 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 // Global variables
 // -----------------------------------------------------------------------------
-float g_camera_pos[3] = { 0.0f, 3.0f, 0.0f };
 
 // window size
 const int Width = 1024;
@@ -67,6 +66,8 @@ vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
 CLight g_light;
 CSphere g_sphere;
+
+D3DLIGHT9 lit;
 
 Player players[2] = { Player(1), Player(2) };
 vector<Player*> playerVec = { &players[0], &players[1] };
@@ -112,24 +113,24 @@ bool Setup() {
 	g_jumper.setVelocity(0, 0);
 
 	// light setting 
-	D3DLIGHT9 lit;
+	D3DXVECTOR3 m = g_jumper.getPosition();
 	::ZeroMemory(&lit, sizeof(lit));
 	lit.Type = D3DLIGHT_POINT;
 	lit.Diffuse = d3d::WHITE;
 	lit.Specular = d3d::WHITE * 1.0f;
 	lit.Ambient = d3d::WHITE * 1.0f;
-	lit.Position = D3DXVECTOR3(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
+	lit.Position = D3DXVECTOR3(m.x, 3.0f, m.z);
 	lit.Range = 100.0f;
 	lit.Attenuation0 = 0.0f;
 	lit.Attenuation1 = 0.9f;
 	lit.Attenuation2 = 0.0f;
 
-	float radius = 0.1f;
+	float radius = 0.01f;
 	if (false == g_light.create(Device, lit, radius)) return false;
 
 	// Position and aim the camera.
-	D3DXVECTOR3 pos(g_camera_pos[0], g_camera_pos[1], g_camera_pos[2]);
-	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
+	D3DXVECTOR3 pos(m.x, 3.0f, m.z);
+	D3DXVECTOR3 target(m.x, 0.0f, m.z);
 	D3DXVECTOR3 up(0.0f, 0.0f, 1.0f);	// camera's rotation
 	D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
 	Device->SetTransform(D3DTS_VIEW, &g_mView);
@@ -196,7 +197,15 @@ bool Display(float timeDelta)
 		// draw jumper
 		g_jumper.draw(Device, g_mWorld);
 		
-		//g_light.draw(Device); // 효과는 주되, 화면상에서 가려줌
+		D3DXVECTOR3 m = g_jumper.getPosition();
+		D3DXVECTOR3 pos(m.x, 3.0f, m.z);
+		D3DXVECTOR3 target(m.x, 0.0f, m.z);
+		D3DXVECTOR3 up(0.0f, 0.0f, 1.0f);	// camera's rotation
+		D3DXMatrixLookAtLH(&g_mView, &pos, &target, &up);
+		Device->SetTransform(D3DTS_VIEW, &g_mView);
+
+		lit.Position = D3DXVECTOR3(m.x, 3.0f, m.z);
+		Device->SetLight(0, &lit);
 
 		Device->EndScene();
 		Device->Present(0, 0, 0, 0);
