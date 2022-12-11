@@ -39,18 +39,16 @@ void DisplayText::destory() {
 
 
 bool DisplayText::update() {
+	
+	this->FontObjects[0]->DrawText(windowWidth / 2, 10, 0xff0000FF, "Stage 1");
+	
+	this->FontObjects[1]->DrawText(60, 20, 0xff0000000, "Forest of Patience");
+	this->FontObjects[2]->DrawText(60, 50, 0xff0000FF, this->jumperName.c_str());
 
-	this->FontObjects[0]->DrawText(60, 20, 0xff0000FF, this->jumperName.c_str());
-	this->FontObjects[1]->DrawText(windowWidth - 160, 20, 0xff000000, this->jumperName.c_str());
-
-
-	this->FontObjects[2]->DrawText(60, 50, 0xff0000000, "forest of patience");
-	this->FontObjects[3]->DrawText(windowWidth - 160, 50, 0xff000000, "doyeab");
-
-	this->FontObjects[4]->DrawText(60, 80, 0xff0000000, "minjun");
-	this->FontObjects[5]->DrawText(windowWidth - 160, 80, 0xff000000, "jimin");
-
-	this->FontObjects[6]->DrawText(windowWidth / 2, 10, 0xff0000FF, "Stage 1");
+	this->FontObjects[3]->DrawText(windowWidth - 160, 20, 0xff000000, "Team14");
+	this->FontObjects[4]->DrawText(windowWidth - 160, 50, 0xff000000, "JiMin");
+	this->FontObjects[5]->DrawText(windowWidth - 160, 80, 0xff000000, "MinJun");
+	this->FontObjects[6]->DrawText(windowWidth - 160, 110, 0xff000000, "DoYeop");
 
 	return false;
 }
