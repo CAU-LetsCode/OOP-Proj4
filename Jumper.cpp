@@ -15,7 +15,10 @@ Jumper::Jumper(void) {
 	ZeroMemory(&m_mtrl, sizeof(m_mtrl));
 	v_x = v_z = 0;
 	onPlatform = false;
+	firstTouch = true;
 	m_pJumperMesh = NULL;
+	whereIdx = -1;
+	moveState = MOVESTATE::STOP;
 }
 
 Jumper::Jumper(const char* jumperImageFileName) {
@@ -69,13 +72,17 @@ void Jumper::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 }
 
 bool Jumper::hasIntersected(Platform& platform) {
+	if (v_z > 0) return false;
+	
 	D3DXVECTOR3 cord = this->getPosition();
 	D3DXVECTOR3 platform_cord = platform.getPosition();
 
 	double xDiff = cord.x - platform_cord.x;
 	double zDiff = (cord.z - JUMPERDEPTH / 2) - (platform_cord.z + PLATFORMDEPTH / 2);
 
-	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH) {
+	double xBoundary = PLATFORMWIDTH / 2 + JUMPERWIDTH / 2;
+
+	if (-xBoundary < xDiff && xDiff < xBoundary) {
 		if (-PLATFORMDEPTH < zDiff && zDiff < 0) {
 			return true;
 		}
@@ -182,4 +189,20 @@ bool Jumper::isOnPlatform() {
 
 void Jumper::setOnPlatform(bool flag) {
 	onPlatform = flag;
+}
+
+MOVESTATE Jumper::getMoveState() {
+	return moveState;
+}
+
+void Jumper::setMoveState(MOVESTATE iparam) {
+	moveState = iparam;
+}
+
+bool Jumper::isFirstTouch() {
+	return firstTouch;
+}
+
+void Jumper::setFirstTouch(bool flag) {
+	firstTouch = flag;
 }
