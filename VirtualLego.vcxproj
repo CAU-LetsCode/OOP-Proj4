@@ -143,6 +143,7 @@
     <ClCompile Include="Jumper.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Status.cpp" />
     <ClCompile Include="virtualLego.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -158,6 +159,7 @@
     <ClInclude Include="Jumper.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Platform.h" />
+    <ClInclude Include="Status.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

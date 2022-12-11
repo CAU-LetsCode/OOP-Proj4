@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+#include "Status.h"
 #include "d3dUtility.h"
 #include "d3dfont.h"
 
@@ -18,10 +19,11 @@ private:
 	int windowHeight;
 
 	string jumperName;
-	string playerBallCount[2];
+	string jumperNumStage;
 
 	string turnStatus;
 
+	Status status;
 	CD3DFont* FontObjects[9];
 
 public:
