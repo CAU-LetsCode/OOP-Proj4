@@ -18,7 +18,7 @@ Jumper::Jumper(void) {
 }
 
 Jumper::Jumper(const char* jumperImageFileName) {
-	ZeroMemory(&m_mtrl, sizeof(m_mtrl));
+	Jumper();
 	this->jumperImageFileName = jumperImageFileName;
 }
 
@@ -27,7 +27,7 @@ Jumper::~Jumper(void) {
 }
 
 bool Jumper::create(IDirect3DDevice9* pDevice) {
-	if (NULL == pDevice) return false;
+	if (!pDevice) return false;
 
 	m_mtrl.Diffuse = d3d::WHITE;
 	m_mtrl.Ambient = d3d::WHITE;
@@ -41,7 +41,7 @@ bool Jumper::create(IDirect3DDevice9* pDevice) {
 
 	this->m_pJumperMesh = _createMappedBox(pDevice);
 
-	string filePath = "./image/" + this->jumperImageFileName + ".bmp";
+	string filePath = "./image/" + jumperImageFileName + ".bmp";
 	if (FAILED(D3DXCreateTextureFromFile(pDevice, filePath.c_str(), &Tex))) {
 		return false;
 	}
