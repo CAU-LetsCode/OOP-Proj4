@@ -166,6 +166,10 @@ bool Display(float timeDelta)
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
 				g_jumper.setOnPlatform(true);
 			}
+			else {
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), g_jumper.getVelocity_Z());
+				g_jumper.setOnPlatform(false);
+			}
 		}
 
 		// draw jumper

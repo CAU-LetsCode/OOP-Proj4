@@ -76,8 +76,8 @@ bool Jumper::hasIntersected(Platform& platform) {
 	double xDiff = cord.x - platform_cord.x;
 	double zDiff = (cord.z - JUMPERDEPTH / 2) - (platform_cord.z + PLATFORMDEPTH / 2);
 
-	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH) {
-		if (-PLATFORMDEPTH < zDiff && zDiff < 0) {
+	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH / 2) {
+		if (-PLATFORMDEPTH / 4 < zDiff && zDiff < 0) {
 			return true;
 		}
 	}
