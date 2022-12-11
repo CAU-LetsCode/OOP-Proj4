@@ -185,12 +185,16 @@ bool Display(float timeDelta)
 					g_jumper.setFirstTouch(false);
 					g_jumper.whereIdx = i;
 				}
-				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
-				g_jumper.setOnPlatform(true);
+				else {
+					g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
+					g_jumper.setOnPlatform(true);
+				}
 			}
 			else if (g_jumper.whereIdx == i) {
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), g_jumper.getVelocity_Z());
 				g_jumper.setOnPlatform(false);
+				g_jumper.setFirstTouch(true);
+				g_jumper.whereIdx = -1;
 			}
 		}
 

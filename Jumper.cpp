@@ -94,8 +94,10 @@ bool Jumper::hasIntersected(Platform& platform) {
 void Jumper::jumperUpdate(float timeDiff) {
 	const float TIME_SCALE = 3.3;
 
+	float d_v_z = TIME_SCALE * timeDiff * GRAVITY;
+
 	if (onPlatform) v_z = 0;
-	else v_z -= TIME_SCALE * timeDiff * GRAVITY;
+	else v_z -= d_v_z;
 
 	D3DXVECTOR3 cord = this->getPosition();
 
