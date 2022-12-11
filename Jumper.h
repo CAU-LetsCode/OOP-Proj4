@@ -23,6 +23,7 @@ private:
 	float v_x, v_z;
 	float pre_x, pre_z;
 	bool onPlatform;
+	bool firstTouch;
 
 	MOVESTATE moveState;
 
@@ -38,6 +39,8 @@ public:
 	Jumper(void);
 	Jumper(const char* jumperImageFileName);
 	virtual ~Jumper(void);
+
+	int whereIdx;
 
 	bool create(IDirect3DDevice9* pDevice);
 	void destroy(void);
@@ -56,4 +59,6 @@ public:
 	void setOnPlatform(bool flag);
 	MOVESTATE getMoveState();
 	void setMoveState(MOVESTATE iparam);
+	bool isFirstTouch();
+	void setFirstTouch(bool flag);
 };

@@ -36,7 +36,7 @@
 #include "Platform.h"
 #include "Jumper.h"
 
-#define NUM_PLATFORM 1
+#define NUM_PLATFORM 2
 
 using std::array;
 
@@ -88,14 +88,18 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
+	g_platforms[0].setPosition(0, 0, 0);
+	g_platforms[1].setPosition(-0.5, 0, 0.2);
+
 	for (int i = 0; i < NUM_PLATFORM; i++) {
-		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::GREEN)) return false;
-		g_platforms[i].setPosition(0, 0, 0);
+		if (!g_platforms[i].create(Device, d3d::GREEN)) return false;
+		D3DXVECTOR3 m = g_platforms[i].getPosition();
+		g_platforms[i].setPosition(m.x, m.y, m.z);
 	}
 
 	// create jumper
 	if (!g_jumper.create(Device)) return false;
-	g_jumper.setPosition(0, 0, 1);
+	g_jumper.setPosition(0, 0.005, 1);
 	g_jumper.setVelocity(0, 0);
 
 	// light setting 
@@ -163,10 +167,15 @@ bool Display(float timeDelta)
 		g_jumper.jumperUpdate(timeDelta);
 		for (int i = 0; i < NUM_PLATFORM; i++) {
 			if (g_jumper.hasIntersected(g_platforms[i])) {
+				if (g_jumper.isFirstTouch()) {
+					g_jumper.setVelocity(0, 0);
+					g_jumper.setFirstTouch(false);
+					g_jumper.whereIdx = i;
+				}
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
 				g_jumper.setOnPlatform(true);
 			}
-			else {
+			else if (g_jumper.whereIdx == i) {
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), g_jumper.getVelocity_Z());
 				g_jumper.setOnPlatform(false);
 			}
@@ -219,6 +228,8 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				g_jumper.setPosition(m.x, m.y, m.z+0.05);
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0.5);
 				g_jumper.setOnPlatform(false);
+				g_jumper.setFirstTouch(true);
+				g_jumper.whereIdx = -1;
 			}
 			break;
 		case VK_LEFT:

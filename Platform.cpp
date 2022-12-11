@@ -4,25 +4,9 @@ Platform::Platform(void) {
     D3DXMatrixIdentity(&m_mLocal);
     ZeroMemory(&m_mtrl, sizeof(m_mtrl));
     x, z = 0;
-    width = depth = height = 0;
-    m_pBoundMesh = NULL;
-}
-
-Platform::Platform(float iwidth, float iheight, float idepth, D3DXCOLOR color) {
-    D3DXMatrixIdentity(&m_mLocal);
-    ZeroMemory(&m_mtrl, sizeof(m_mtrl));
-    x, z = 0;
-
-    m_mtrl.Ambient = color;
-    m_mtrl.Diffuse = color;
-    m_mtrl.Specular = color;
-    m_mtrl.Emissive = d3d::BLACK;
-    m_mtrl.Power = 5.0f;
-    
-    width = iwidth;
-    height = iheight;
-    depth = idepth;
-
+    width = PLATFORMWIDTH;
+    height = PLATFORMHEIGHT;
+    depth = PLATFORMDEPTH;
     m_pBoundMesh = nullptr;
 }
 
@@ -30,7 +14,7 @@ Platform::~Platform(void) {
 
 }
 
-bool Platform::create(IDirect3DDevice9* pDevice, float iwidth, float iheight, float idepth, D3DXCOLOR color) {
+bool Platform::create(IDirect3DDevice9* pDevice, D3DXCOLOR color) {
     if (NULL == pDevice)
         return false;
 
@@ -40,10 +24,7 @@ bool Platform::create(IDirect3DDevice9* pDevice, float iwidth, float iheight, fl
     m_mtrl.Emissive = d3d::BLACK;
     m_mtrl.Power = 5.0f;
 
-    width = iwidth;
-    depth = idepth;
-
-    if (FAILED(D3DXCreateBox(pDevice, iwidth, iheight, idepth, &m_pBoundMesh, NULL)))
+    if (FAILED(D3DXCreateBox(pDevice, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, &m_pBoundMesh, NULL)))
         return false;
     return true;
 }
