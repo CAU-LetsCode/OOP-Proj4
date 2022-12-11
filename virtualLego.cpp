@@ -35,6 +35,7 @@
 
 #include "Platform.h"
 #include "Jumper.h"
+#include "DisplayText.h"
 
 #define NUM_PLATFORM 2
 
@@ -69,6 +70,9 @@ CSphere g_sphere;
 Player players[2] = { Player(1), Player(2) };
 vector<Player*> playerVec = { &players[0], &players[1] };
 Status status(playerVec);
+
+DisplayText displayText(584, 342);
+
 
 // -----------------------------------------------------------------------------
 // Functions

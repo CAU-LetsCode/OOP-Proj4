@@ -1,12 +1,13 @@
-#include "Display.h"
+#include "DisplayText.h"
 
 
-Display::Display(const int windowWidth, const int windowHeight) {
+
+DisplayText::DisplayText(const int windowWidth, const int windowHeight) {
 	this->windowWidth = windowWidth;
 	this->windowHeight = windowHeight;
 }
 
-Display::~Display() {
+DisplayText::~DisplayText() {
 	for (unsigned int i = 0; i < 7; i++) {
 		delete this->FontObjects[i];
 	}
@@ -14,7 +15,7 @@ Display::~Display() {
 	delete[] this->FontObjects;
 }
 
-bool Display::create(const char* fontFamily, const int fontSize, IDirect3DDevice9* pDevice) {
+bool DisplayText::create(const char* fontFamily, const int fontSize, IDirect3DDevice9* pDevice) {
 	for (unsigned int i = 0; i < 7; i++) {
 		this->FontObjects[i] = new CD3DFont(fontFamily, fontSize, 0);
 		this->FontObjects[i]->InitDeviceObjects(pDevice);
@@ -26,7 +27,7 @@ bool Display::create(const char* fontFamily, const int fontSize, IDirect3DDevice
 	return true;
 }
 
-void Display::destory() {
+void DisplayText::destory() {
 	for (unsigned int i = 0; i < 2; i++) {
 		this->FontObjects[i]->InvalidateDeviceObjects();
 		this->FontObjects[i]->DeleteDeviceObjects();
@@ -37,7 +38,7 @@ void Display::destory() {
 
 
 
-bool Display::update() {
+bool DisplayText::update() {
 
 	this->FontObjects[0]->DrawText(60, 20, 0xff0000FF, this->jumperName.c_str());
 	this->FontObjects[1]->DrawText(windowWidth - 160, 20, 0xff000000, this->jumperName.c_str());
