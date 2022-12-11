@@ -23,7 +23,6 @@ private:
 
 	string turnStatus;
 
-	Status status;
 	CD3DFont* FontObjects[9];
 
 public:
