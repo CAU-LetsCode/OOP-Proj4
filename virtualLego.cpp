@@ -28,6 +28,7 @@
 #include "DisplayText.h"
 #include "Map.h"
 #include "Goal.h"
+#include "Status.h"
 
 
 
@@ -54,12 +55,11 @@ IDirect3DDevice9* Device = NULL;
 
 #define NUM_PLATFORM 16
 
-bool isGameOver = false;
-
 Jumper g_jumper;
 CLight g_light;
 
 D3DLIGHT9 lit;
+Status status;
 
 DisplayText displayText(Width, Height);
 
@@ -242,7 +242,7 @@ bool Display(float timeDelta)
         goal3.hitBy(g_jumper);
 
         // intersect between jumper and platform
-        if (isGameOver) {
+        if (status.getIsGameOver()) {
             g_jumper.setPosition(0, 0, 0.5);
             g_jumper.setVelocity(0, 0);
         }
@@ -292,9 +292,9 @@ bool Display(float timeDelta)
         Device->SetTexture(0, NULL);
     }
 
-    if (!isGameOver && g_jumper.getPosition().z < -3) {
+    if (!status.getIsGameOver() && g_jumper.getPosition().z < -3) {
         displayText.updateRetry();
-        isGameOver = true;
+        status.setIsGameOver(true);
     }
 
     return true;
@@ -348,13 +348,13 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
             }
             break;
         case 0x59:  // Y
-            if (isGameOver) {
-                isGameOver = false;
+            if (status.getIsGameOver()) {
+                status.setIsGameOver(false);
                 //displayText.destroyRetry();
             }
             break;
         case 0x4E:  // N
-            if (isGameOver) {
+            if (status.getIsGameOver()) {
                 //displayText.destroyRetry();
                 //gameover
                 //todo
