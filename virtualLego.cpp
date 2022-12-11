@@ -126,22 +126,22 @@ bool Setup() {
     // stage 3
     map3.setPosition(0, 40, 0, 0);
     map3.setPosition(1, 40 + 0.5, 0, 0.3);
-    map3.setPosition(2, 40 + 1.0, 0, 0.6);
-    map3.setPosition(3, 40 + 1.5, 0, 0.3);
-    map3.setPosition(4, 40 + 1.5, 0, 0.9);
-    map3.setPosition(5, 40 + 2.0, 0, 0.6);
-    map3.setPosition(6, 40 + 1.0, 0, 1.2);
-    map3.setPosition(7, 40 + 2.0, 0, 1.2);
-    map3.setPosition(8, 40 + 2.5, 0, 1.5);
-    map3.setPosition(9, 40 + 3.0, 0, 1.8);
-    map3.setPosition(10, 40 + 3.5, 0, 2.1);
-    map3.setPosition(11, 40 + 4.7, 0, 0.6);
-    map3.setPosition(12, 40 + 5.2, 0, 0.9);
-    map3.setPosition(13, 40 + 5.7, 0, 0.6);
-    map3.setPosition(14, 40 + 6.2, 0, 0.9);
-    map3.setPosition(15, 40 + 6.7, 0, 1.2);
+    map3.setPosition(2, 40 , 0, 0.6);
+    map3.setPosition(3, 40 + 0.5, 0, 0.9);
+    map3.setPosition(4, 40 + 1.0, 0, 1.2);
+    map3.setPosition(5, 40 + 0.5, 0, 1.5);
+    map3.setPosition(6, 40 , 0, 1.8);
+    map3.setPosition(7, 40 - 0.5, 0, 2.1);
+    map3.setPosition(8, 40 - 2.0 +0.2, 0, 0.3);
+    map3.setPosition(9, 40 - 2.5 + 0.2, 0, 0);
+    map3.setPosition(10, 40 -3.0 + 0.2, 0, 0.3);
+    map3.setPosition(11, 40 -3.5 + 0.2, 0, 0.6);
+    map3.setPosition(12, 40 - 3.0 + 0.2, 0, 0.9);
+    map3.setPosition(13, 40 - 3.5 + 0.2, 0, 1.2);
+    map3.setPosition(14, 40 - 4.0 + 0.2, 0, 1.5);
+    map3.setPosition(15, 40 - 4.5 + 0.2, 0, 1.8);
 
-    goal3.setPosition(40 + 6.7, 0, 1.6);
+    goal3.setPosition(40 -5.0 + 0.2, 0, 0);
 
     // final stage
     map4.setPosition(0, 60, 0, 0);
