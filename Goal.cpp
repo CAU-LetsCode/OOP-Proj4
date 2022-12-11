@@ -89,7 +89,7 @@ void Goal::hitBy(Jumper& jumper) {
     if (this->hasIntersected(jumper)) {
         if (stage == 1) jumper.setPosition(20, 0, 0.3);
         if (stage == 2) jumper.setPosition(40, 0, 0.3);
-        if (stage == 3) jumper.setPosition(60, 0, 0.3);
+        if (stage == 3) jumper.setPosition(60, 0, 0.5);
     }
 }
 
