@@ -16,6 +16,7 @@ Jumper::Jumper(void) {
 	v_x = v_z = 0;
 	onPlatform = false;
 	m_pJumperMesh = NULL;
+	moveState = MOVESTATE::STOP;
 }
 
 Jumper::Jumper(const char* jumperImageFileName) {
@@ -182,4 +183,12 @@ bool Jumper::isOnPlatform() {
 
 void Jumper::setOnPlatform(bool flag) {
 	onPlatform = flag;
+}
+
+MOVESTATE Jumper::getMoveState() {
+	return moveState;
+}
+
+void Jumper::setMoveState(MOVESTATE iparam) {
+	moveState = iparam;
 }

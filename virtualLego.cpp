@@ -216,15 +216,36 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0.5);
 				g_jumper.setOnPlatform(false);
 			}
-			
 			break;
-
+		case VK_LEFT:
+			if (g_jumper.isOnPlatform()) {
+				g_jumper.setVelocity(-0.2, g_jumper.getVelocity_Z());
+				g_jumper.setMoveState(MOVESTATE::LEFT);
+			}
+			break;
+		case VK_RIGHT:
+			if (g_jumper.isOnPlatform()) {
+				g_jumper.setVelocity(0.2, g_jumper.getVelocity_Z());
+				g_jumper.setMoveState(MOVESTATE::RIGHT);
+			}
 		}
 		break;
 	}
-
-	case WM_MOUSEMOVE:
-	{
+	case WM_KEYUP: {
+		switch (wParam) {
+		case VK_LEFT:
+			if (g_jumper.isOnPlatform() && g_jumper.getMoveState() == MOVESTATE::LEFT) {
+				g_jumper.setVelocity(0, g_jumper.getVelocity_Z());
+				g_jumper.setMoveState(MOVESTATE::STOP);
+			}
+		case VK_RIGHT:
+			if (g_jumper.isOnPlatform() && g_jumper.getMoveState() == MOVESTATE::RIGHT) {
+				g_jumper.setVelocity(0, g_jumper.getVelocity_Z());
+				g_jumper.setMoveState(MOVESTATE::STOP);
+			}
+		}
+	}
+	case WM_MOUSEMOVE: {
 		int new_x = LOWORD(lParam);
 		int new_y = HIWORD(lParam);
 		float dx;
