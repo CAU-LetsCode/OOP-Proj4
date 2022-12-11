@@ -1,3 +1,5 @@
+#ifndef _JUMPER
+#define _JUMPER
 #include <string>
 
 #include "d3dUtility.h"
@@ -62,3 +64,4 @@ public:
 	bool isFirstTouch();
 	void setFirstTouch(bool flag);
 };
+#endif
