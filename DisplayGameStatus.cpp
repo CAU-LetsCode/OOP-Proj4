@@ -27,7 +27,7 @@ bool DisplayGameStatus::create(const char* fontFamily, const int fontSize, IDire
 	return true;
 }
 
-void DisplayGameStatus::destory() {
+void DisplayGameStatus::destroy() {
 	for (unsigned int i = 0; i < 2; i++) {
 		this->FontObjects[i]->InvalidateDeviceObjects();
 		this->FontObjects[i]->DeleteDeviceObjects();

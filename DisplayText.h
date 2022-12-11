@@ -22,16 +22,19 @@ private:
 
 	string turnStatus;
 
-	CD3DFont* FontObjects[7];
+	CD3DFont* FontObjects[9];
 
 public:
 	DisplayText(const int windowWidth, const int windowHeight);
 	~DisplayText();
 
 	bool create(const char* fontFamily, const int fontSize, IDirect3DDevice9* pDevice);
-	void destory();
+	void destroy();
 
 	bool update();
+
+	bool updateRetry();
+	bool destroyRetry();
 };
 
 #endif

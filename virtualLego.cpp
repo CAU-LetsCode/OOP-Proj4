@@ -88,7 +88,6 @@ void destroyAllLegoBlock(void)
 
 // initialization
 bool Setup() {
-    int i;
 
     D3DXMatrixIdentity(&g_mWorld);
     D3DXMatrixIdentity(&g_mView);
@@ -173,7 +172,7 @@ void Cleanup(void)
         map1.g_platforms[i].destroy();
     }
     g_light.destroy();
-    displayText.destory();
+    displayText.destroy();
 }
 
 // Update
@@ -197,7 +196,7 @@ bool Display(float timeDelta)
 
         // intersect between jumper and platform
         if (isGameOver) {
-            g_jumper.setPosition(0, 0.01, 3);
+            g_jumper.setPosition(0, 0, 0.5);
             g_jumper.setVelocity(0, 0);
         }
         else {
@@ -241,6 +240,7 @@ bool Display(float timeDelta)
     }
 
     if (!isGameOver && g_jumper.getPosition().z < -3) {
+        displayText.updateRetry();
         isGameOver = true;
     }
 
@@ -297,10 +297,12 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case 0x59:  // Y
             if (isGameOver) {
                 isGameOver = false;
+               //displayText.destroyRetry();
             }
             break;
         case 0x4E:  // N
             if (isGameOver) {
+                //displayText.destroyRetry();
                 //gameover
                 //todo
             }
