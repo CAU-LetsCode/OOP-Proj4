@@ -290,7 +290,6 @@ bool Display(float timeDelta)
     }
 
     if (!status.getIsGameOver() && g_jumper.getPosition().z < -3) {
-        displayText.updateRetry();
         status.setIsGameOver(true);
     }
 
@@ -347,12 +346,10 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case 0x59:  // Y
             if (status.getIsGameOver()) {
                 status.setIsGameOver(false);
-                //displayText.destroyRetry();
             }
             break;
         case 0x4E:  // N
             if (status.getIsGameOver()) {
-                //displayText.destroyRetry();
                 //gameover
                 //todo
             }

@@ -8,7 +8,7 @@ DisplayText::DisplayText(const int windowWidth, const int windowHeight) {
 }
 
 DisplayText::~DisplayText() {
-    for (unsigned int i = 0; i < 9; i++) {
+    for (unsigned int i = 0; i < 10; i++) {
         delete this->FontObjects[i];
     }
 
@@ -16,7 +16,7 @@ DisplayText::~DisplayText() {
 }
 
 bool DisplayText::create(const char* fontFamily, const int fontSize, IDirect3DDevice9* pDevice) {
-    for (unsigned int i = 0; i < 9; i++) {
+    for (unsigned int i = 0; i < 10; i++) {
         this->FontObjects[i] = new CD3DFont(fontFamily, fontSize, 0);
         this->FontObjects[i]->InitDeviceObjects(pDevice);
         this->FontObjects[i]->RestoreDeviceObjects();
@@ -28,7 +28,7 @@ bool DisplayText::create(const char* fontFamily, const int fontSize, IDirect3DDe
 }
 
 void DisplayText::destroy() {
-    for (unsigned int i = 0; i < 9; i++) {
+    for (unsigned int i = 0; i < 10; i++) {
         this->FontObjects[i]->InvalidateDeviceObjects();
         this->FontObjects[i]->DeleteDeviceObjects();
         d3d::Delete<CD3DFont*>(this->FontObjects[i]);
@@ -57,22 +57,30 @@ bool DisplayText::update() {
     this->FontObjects[5]->DrawText(windowWidth - 160, 80, 0xff000000, "MinJun");
     this->FontObjects[6]->DrawText(windowWidth - 160, 110, 0xff000000, "DoYeop");
 
-    return false;
-}
-
-bool DisplayText::updateRetry() {
-    this->FontObjects[7]->DrawText(windowWidth - 160, 150, 0xff000000, "DoYeop");
-    /*this->FontObjects[7]->DrawText(windowWidth / 2, windowHeight / 2 - 30, 0xff000000, "Do You wanna Retry?");
-    this->FontObjects[8]->DrawText(windowWidth / 20, windowHeight / 2, 0xff000000, "[Y/N]");*/
-
-    return false;
-}
-
-bool DisplayText::destroyRetry() {
-    for (unsigned int i = 7; i < 9; i++) {
-        this->FontObjects[i]->InvalidateDeviceObjects();
-        this->FontObjects[i]->DeleteDeviceObjects();
-        d3d::Delete<CD3DFont*>(this->FontObjects[i]);
+    if (status.getIsGameOver() == true) {
+        this->FontObjects[7]->DrawText(windowWidth / 2 - 90, windowHeight / 2 - 300 , 0xff000000, "Do You wanna Retry ?");
+        this->FontObjects[8]->DrawText(windowWidth / 2 - 50, windowHeight / 2 - 200, 0xff000000, "[ Y / ESC ]");
     }
+    else if (status.getIsGameOver() == false && status.getNumStage() == 4) {
+        this->FontObjects[9]->DrawText(windowWidth / 2 - 90, windowHeight / 2 - 300, 0xff0000FF, "Congratulation !");
+    }
+
     return false;
 }
+
+//bool DisplayText::updateRetry() {
+//    this->FontObjects[7]->DrawText(windowWidth - 160, 150, 0xff000000, "DoYeop");
+//    /*this->FontObjects[7]->DrawText(windowWidth / 2, windowHeight / 2 - 30, 0xff000000, "Do You wanna Retry?");
+//    this->FontObjects[8]->DrawText(windowWidth / 20, windowHeight / 2, 0xff000000, "[Y/N]");*/
+//
+//    return false;
+//}
+//
+//bool DisplayText::destroyRetry() {
+//    for (unsigned int i = 7; i < 9; i++) {
+//        this->FontObjects[i]->InvalidateDeviceObjects();
+//        this->FontObjects[i]->DeleteDeviceObjects();
+//        d3d::Delete<CD3DFont*>(this->FontObjects[i]);
+//    }
+//    return false;
+//}
