@@ -18,18 +18,7 @@
 #include <cassert>
 #include <array>
 
-#include "CSphere.h"
-#include "CWall.h"
 #include "CLight.h"
-#include "CTopWall.h"
-#include "CBottomWall.h"
-#include "CRightWall.h"
-#include "CLeftWall.h"
-#include "CFloor.h"
-#include "CHole.h"
-#include "CHandSphere.h"
-#include "Status.h"
-#include "Player.h"
 #include "d3dUtility.h"
 #include "d3dfont.h"
 
@@ -68,13 +57,10 @@ bool isGameOver = false;
 
 Jumper g_jumper;
 CLight g_light;
-CSphere g_sphere;
 
 D3DLIGHT9 lit;
 
-Player players[2] = { Player(1), Player(2) };
-vector<Player*> playerVec = { &players[0], &players[1] };
-Status status(playerVec);
+
 
 DisplayText displayText(Width, Height);
 
