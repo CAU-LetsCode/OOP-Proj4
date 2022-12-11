@@ -15,7 +15,8 @@ struct _VERTEX {
     float tv;
 };
 
-Goal::Goal(void) {
+Goal::Goal(int stage) {
+    this->stage = stage;
     ZeroMemory(&m_mtrl, sizeof(m_mtrl)); // memset을 통해 모두 0으로 초기화
     this->m_radius = M_RADIUS;
     this->m_pSphereMesh = nullptr;
@@ -77,7 +78,7 @@ bool Goal::hasIntersected(Jumper& jumper) {
     double zDistance = abs((cord.z - jumper_cord.z) * (cord.z - jumper_cord.z));
     double totalDistance = sqrt(xDistance + zDistance);
 
-    if (totalDistance < (this->getRadius() + JUMPERWIDTH/2)) {
+    if (totalDistance < (this->getRadius() + JUMPERWIDTH / 2)) {
         return true;
     }
 
@@ -86,8 +87,8 @@ bool Goal::hasIntersected(Jumper& jumper) {
 
 void Goal::hitBy(Jumper& jumper) {
     if (this->hasIntersected(jumper)) {
-        this->setPosition(10000, 0, 10000);
-        jumper.setPosition(10, 0, 10.3);
+        if (stage == 1) jumper.setPosition(20, 0, 0.3);
+        if (stage == 2) jumper.setPosition(40, 0, 0.3);
     }
 }
 

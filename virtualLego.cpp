@@ -18,6 +18,7 @@
 #include <cassert>
 #include <array>
 
+
 #include "CLight.h"
 #include "d3dUtility.h"
 #include "d3dfont.h"
@@ -60,12 +61,10 @@ CLight g_light;
 
 D3DLIGHT9 lit;
 
-
-
 DisplayText displayText(Width, Height);
 
 Map map1(16), map2(16), map3(16);
-Goal goal1, goal2, goal3;
+Goal goal1(1), goal2(2), goal3(3);
 
 // -----------------------------------------------------------------------------
 // Functions
@@ -83,6 +82,8 @@ bool Setup() {
 
     if (!displayText.create("Times New Roman", 16, Device)) return false;
 
+
+    // stage 1
     map1.setPosition(0, 0, 0, 0);
     map1.setPosition(1, -0.5, 0, 0.3);
     map1.setPosition(2, +0.5, 0, 0.3);
@@ -102,21 +103,33 @@ bool Setup() {
 
     goal1.setPosition(+0.0, 0, 2.8);
 
+    // stage 2
+    map2.setPosition(0, 20, 0, 0);
+    map2.setPosition(1, 20 + 0.5, 0, 0.3);
+    map2.setPosition(2, 20 + 1.0, 0, 0.6);
+    map2.setPosition(3, 20 + 1.5, 0, 0.3);
+    map2.setPosition(4, 20 + 1.5, 0, 0.9);
+    map2.setPosition(5, 20 + 2.0, 0, 0.6);
+    map2.setPosition(6, 20 + 1.0, 0, 1.2);
+    map2.setPosition(7, 20 + 2.0, 0, 1.2);
+    map2.setPosition(8, 20 + 2.5, 0, 1.5);
+    map2.setPosition(9, 20 + 3.0, 0, 1.8);
+    map2.setPosition(10, 20 + 3.5, 0, 2.1);
+    map2.setPosition(11, 20 + 4.7, 0, 0.6);
+    map2.setPosition(12, 20 + 5.2, 0, 0.9);
+    map2.setPosition(13, 20 + 5.7, 0, 0.6);
+    map2.setPosition(14, 20 + 6.2, 0, 0.9);
+    map2.setPosition(15, 20 + 6.7, 0, 1.2);
 
-    map2.setPosition(0, 10, 0, 10);
-    // create platform
+    goal2.setPosition(20 + 6.7, 0, 1.6);
 
-    /*for (int i = 0; i < NUM_PLATFORM; i++) {
-       if (!map1.g_platforms[i].create(Device, d3d::GREEN)) return false;
-       D3DXVECTOR3 m = map1.g_platforms[i].getPosition();
-       map1.g_platforms[i].setPosition(m.x, m.y, m.z);
-    }*/
     for (int i = 0; i < NUM_PLATFORM; i++) {
         map1.g_platforms[i].create(Device, d3d::GREEN);
         map2.g_platforms[i].create(Device, d3d::GREEN);
     }
 
     goal1.create(Device);
+    goal2.create(Device);
 
     // create jumper
     if (!g_jumper.create(Device)) return false;
@@ -170,6 +183,7 @@ void Cleanup(void)
     g_light.destroy();
     displayText.destroy();
     goal1.destroy();
+    goal2.destroy();
 }
 
 // Update
@@ -193,6 +207,7 @@ bool Display(float timeDelta)
         }
 
         goal1.hitBy(g_jumper);
+        goal2.hitBy(g_jumper);
 
         // intersect between jumper and platform
         if (isGameOver) {
@@ -220,13 +235,14 @@ bool Display(float timeDelta)
                 g_jumper.whereIdx = -1;
             }
         }
-        
+
 
         // draw jumper
         g_jumper.draw(Device, g_mWorld);
-        
+
         // draw goal
         goal1.draw(Device, g_mWorld);
+        goal2.draw(Device, g_mWorld);
 
         D3DXVECTOR3 m = g_jumper.getPosition();
         D3DXVECTOR3 pos(m.x, 3.0f, m.z);
@@ -301,7 +317,7 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case 0x59:  // Y
             if (isGameOver) {
                 isGameOver = false;
-               //displayText.destroyRetry();
+                //displayText.destroyRetry();
             }
             break;
         case 0x4E:  // N

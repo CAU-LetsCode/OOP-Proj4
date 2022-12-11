@@ -8,6 +8,7 @@ using std::string;
 class Goal
 {
 protected:
+	int stage;
 	float center_x, center_y, center_z;
 	float m_radius;
 
@@ -21,7 +22,7 @@ protected:
 
 
 public:
-	Goal(void);
+	Goal(int stage);
 	virtual ~Goal(void);
 
 	bool create(IDirect3DDevice9* pDevice);
