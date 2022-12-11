@@ -217,7 +217,9 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			}
 			break;
 		case VK_SPACE:
-			
+			if (g_jumper.isOnPlatform()) {
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), 20);
+			}
 			
 			break;
 
