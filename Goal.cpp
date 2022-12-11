@@ -74,14 +74,24 @@ void Goal::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 
 }
 
-bool Goal::hasIntersected(Jumper& ball) {
+bool Goal::hasIntersected(Jumper& jumper) {
+    D3DXVECTOR3 cord = this->getPosition();
+    D3DXVECTOR3 jumper_cord = jumper.getPosition();
 
+    double xDistance = abs((cord.x - jumper_cord.x) * (cord.x - jumper_cord.x));
+    double zDistance = abs((cord.z - jumper_cord.z) * (cord.z - jumper_cord.z));
+    double totalDistance = sqrt(xDistance + zDistance);
+
+    if (totalDistance < (this->getRadius() + JUMPERWIDTH/2)) {
+        return true;
+    }
 
     return false;
 }
 
 void Goal::hitBy(Jumper& ball) {
     if (this->hasIntersected(ball)) {
+        this->setPosition(10000, 0, 10000);
     }
 }
 
