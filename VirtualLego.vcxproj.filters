@@ -21,40 +21,10 @@
     <ClCompile Include="virtualLego.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CSphere.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CWall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CTopWall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CFloor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CBottomWall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CRightWall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CLeftWall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CHole.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="d3dfont.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="status.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dxutil.cpp">
@@ -63,16 +33,10 @@
     <ClCompile Include="d3dutil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CHandSphere.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Jumper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Platform.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DisplayGameStatus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DisplayText.cpp">
@@ -89,40 +53,10 @@
     <ClInclude Include="d3dUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CSphere.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CWall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CLight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CTopWall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CFloor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CBottomWall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CRightWall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CLeftWall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CHole.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="d3dfont.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="status.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dxutil.h">
@@ -131,16 +65,10 @@
     <ClInclude Include="d3dutil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CHandSphere.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Jumper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Platform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DisplayGameStatus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DisplayText.h">
