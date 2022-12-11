@@ -37,9 +37,6 @@
 #include "Jumper.h"
 
 #define NUM_PLATFORM 1
-#define PLATFORMWIDTH 0.2
-#define PLATFORMHEIGHT 0.05
-#define PLATFORMDEPTH 0.05
 
 using std::array;
 
@@ -67,6 +64,7 @@ vector<Platform> g_platforms(NUM_PLATFORM);
 vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
 CLight g_light;
+CSphere g_sphere;
 
 Player players[2] = { Player(1), Player(2) };
 vector<Player*> playerVec = { &players[0], &players[1] };
@@ -91,7 +89,7 @@ bool Setup() {
 
 	// create platform
 	for (int i = 0; i < NUM_PLATFORM; i++) {
-		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::RED)) return false;
+		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::GREEN)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
 	}
 
@@ -163,6 +161,12 @@ bool Display(float timeDelta)
 
 		// intersect between jumper and platform
 		g_jumper.jumperUpdate(timeDelta);
+		for (int i = 0; i < NUM_PLATFORM; i++) {
+			if (g_jumper.hasIntersected(g_platforms[i])) {
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
+				g_jumper.setOnPlatform(true);
+			}
+		}
 
 		// draw jumper
 		g_jumper.draw(Device, g_mWorld);
@@ -206,7 +210,12 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			}
 			break;
 		case VK_SPACE:
-			
+			if (g_jumper.isOnPlatform()) {
+				D3DXVECTOR3 m =  g_jumper.getPosition();
+				g_jumper.setPosition(m.x, m.y, m.z+0.05);
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0.5);
+				g_jumper.setOnPlatform(false);
+			}
 			
 			break;
 

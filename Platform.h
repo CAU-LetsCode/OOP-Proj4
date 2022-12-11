@@ -3,8 +3,9 @@
 
 #include "d3dUtility.h"
 
-#define PLATFORMWIDTH 50
-#define PLATFORMHEIGHT 50
+#define PLATFORMWIDTH 0.4f
+#define PLATFORMHEIGHT 0.1f
+#define PLATFORMDEPTH 0.1f
 #define LTX(x) x - PLATFORMWIDTH / 2	// x of Left Top point
 #define LTZ(z) z + PLATFORMHEIGHT / 2	// z of Left Top point
 

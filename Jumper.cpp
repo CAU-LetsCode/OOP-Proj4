@@ -14,6 +14,7 @@ Jumper::Jumper(void) {
 	D3DXMatrixIdentity(&m_mLocal);
 	ZeroMemory(&m_mtrl, sizeof(m_mtrl));
 	v_x = v_z = 0;
+	onPlatform = false;
 	m_pJumperMesh = NULL;
 }
 
@@ -71,11 +72,11 @@ bool Jumper::hasIntersected(Platform& platform) {
 	D3DXVECTOR3 cord = this->getPosition();
 	D3DXVECTOR3 platform_cord = platform.getPosition();
 
-	double xDistance = cord.x - LTX(platform_cord.x);
-	double zDistance = cord.z - LTZ(platform_cord.z);
+	double xDiff = cord.x - platform_cord.x;
+	double zDiff = (cord.z - JUMPERDEPTH / 2) - (platform_cord.z + PLATFORMDEPTH / 2);
 
-	if (-JUMPERWIDTH < xDistance && xDistance < PLATFORMWIDTH) {
-		if (0 < zDistance && zDistance < PLATFORMHEIGHT) {
+	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH) {
+		if (-PLATFORMDEPTH < zDiff && zDiff < 0) {
 			return true;
 		}
 	}
@@ -85,6 +86,10 @@ bool Jumper::hasIntersected(Platform& platform) {
 
 void Jumper::jumperUpdate(float timeDiff) {
 	const float TIME_SCALE = 3.3;
+
+	if (onPlatform) v_z = 0;
+	else v_z -= TIME_SCALE * timeDiff * GRAVITY;
+
 	D3DXVECTOR3 cord = this->getPosition();
 
 	this->x = cord.x;
@@ -93,10 +98,6 @@ void Jumper::jumperUpdate(float timeDiff) {
 	float tX = cord.x + TIME_SCALE * timeDiff * v_x;
 	float tZ = cord.z + TIME_SCALE * timeDiff * v_z;
 	this->setPosition(tX, cord.y, tZ);
-
-	v_z -= TIME_SCALE * timeDiff * GRAVITY;
-
-	setVelocity(v_x, v_z);
 }
 
 double Jumper::getVelocity_X() {
@@ -125,8 +126,16 @@ D3DXVECTOR3 Jumper::getPosition() const {
 	return org;
 }
 
-void Jumper::adjustPosition(Jumper& jumper) {
-	// todo
+void Jumper::adjustPosition(Jumper& jumper, Platform platform) {
+	D3DXVECTOR3 jumper_cord = jumper.getPosition();
+
+	this->setPosition((x + this->pre_x) / 2, y, (z + this->pre_z) / 2);
+	jumper.setPosition((jumper_cord.x + jumper.pre_x) / 2, jumper_cord.y, (jumper_cord.z + jumper.pre_z) / 2);
+	if (this->hasIntersected(platform))
+	{
+		this->setPosition(this->pre_x, y, this->pre_z);
+		jumper.setPosition(jumper.pre_x, jumper_cord.y, jumper.pre_z);
+	}
 }
 
 void Jumper::setPosition(float x, float y, float z) {
@@ -142,7 +151,7 @@ void Jumper::setPosition(float x, float y, float z) {
 
 LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	LPD3DXMESH mesh;
-	if (FAILED(D3DXCreateBox(pDev, 0.1, 0.01, 0.1, &mesh, NULL)))
+	if (FAILED(D3DXCreateBox(pDev, JUMPERWIDTH, JUMPERHEIGHT, JUMPERDEPTH, &mesh, NULL)))
 		return nullptr;
 
 	LPD3DXMESH texMesh;
@@ -165,4 +174,12 @@ LPD3DXMESH Jumper::_createMappedBox(IDirect3DDevice9* pDev) {
 	}
 
 	return texMesh;
+}
+
+bool Jumper::isOnPlatform() {
+	return onPlatform;
+}
+
+void Jumper::setOnPlatform(bool flag) {
+	onPlatform = flag;
 }
