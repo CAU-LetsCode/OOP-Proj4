@@ -44,7 +44,7 @@ bool d3d::InitD3D(
 		
 	HWND hwnd = 0;
     hwnd = ::CreateWindow("Direct3D9App",
-        "Virtual Billiard", 
+        "ForestOfPatience", 
 		WS_EX_TOPMOST,
 		0, 0, width, height,
 		0 /*parent hwnd*/, 0 /* menu */, hInstance, 0 /*extra*/); 
