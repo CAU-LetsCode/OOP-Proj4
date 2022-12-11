@@ -191,13 +191,12 @@ bool Display(float timeDelta)
 		g_jumper.jumperUpdate(timeDelta);
 		for (int i = 0; i < NUM_PLATFORM; i++) {
 			if (g_jumper.hasIntersected(g_platforms[i])) {
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
 				if (g_jumper.isFirstTouch()) {
-					g_jumper.setVelocity(0, 0);
 					g_jumper.setFirstTouch(false);
 					g_jumper.whereIdx = i;
 				}
 				else {
-					g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
 					g_jumper.setOnPlatform(true);
 				}
 			}
@@ -269,13 +268,13 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			}
 			break;
 		case VK_LEFT:
-			if (g_jumper.isOnPlatform()) {
+			if (true) {
 				g_jumper.setVelocity(-0.2, g_jumper.getVelocity_Z());
 				g_jumper.setMoveState(MOVESTATE::LEFT);
 			}
 			break;
 		case VK_RIGHT:
-			if (g_jumper.isOnPlatform()) {
+			if (true) {
 				g_jumper.setVelocity(0.2, g_jumper.getVelocity_Z());
 				g_jumper.setMoveState(MOVESTATE::RIGHT);
 			}
@@ -285,59 +284,15 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_KEYUP: {
 		switch (wParam) {
 		case VK_LEFT:
-			if (g_jumper.isOnPlatform() && g_jumper.getMoveState() == MOVESTATE::LEFT) {
+			if ( g_jumper.getMoveState() == MOVESTATE::LEFT) {
 				g_jumper.setVelocity(0, g_jumper.getVelocity_Z());
 				g_jumper.setMoveState(MOVESTATE::STOP);
 			}
 		case VK_RIGHT:
-			if (g_jumper.isOnPlatform() && g_jumper.getMoveState() == MOVESTATE::RIGHT) {
+			if (g_jumper.getMoveState() == MOVESTATE::RIGHT) {
 				g_jumper.setVelocity(0, g_jumper.getVelocity_Z());
 				g_jumper.setMoveState(MOVESTATE::STOP);
 			}
-		}
-	}
-	case WM_MOUSEMOVE: {
-		int new_x = LOWORD(lParam);
-		int new_y = HIWORD(lParam);
-		float dx;
-		float dy;
-
-		if (LOWORD(wParam) & MK_LBUTTON) {
-
-
-			if (isReset) {
-				isReset = false;
-			}
-			else {
-				D3DXVECTOR3 vDist;
-				D3DXVECTOR3 vTrans;
-				D3DXMATRIX mTrans;
-				D3DXMATRIX mX;
-				D3DXMATRIX mY;
-
-				switch (move) {
-				case WORLD_MOVE:
-					dx = (old_x - new_x) * 0.01f;
-					dy = (old_y - new_y) * 0.01f;
-					D3DXMatrixRotationZ(&mX, dx);
-					D3DXMatrixRotationX(&mY, dy);
-					g_mWorld = g_mWorld * mX * mY;
-
-					break;
-				}
-			}
-
-			old_x = new_x;
-			old_y = new_y;
-
-		}
-		else {
-			isReset = true;
-
-			old_x = new_x;
-			old_y = new_y;
-
-			move = WORLD_MOVE;
 		}
 		break;
 	}
