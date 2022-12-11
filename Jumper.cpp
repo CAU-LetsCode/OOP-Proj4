@@ -16,6 +16,7 @@ Jumper::Jumper(void) {
 	v_x = v_z = 0;
 	onPlatform = false;
 	m_pJumperMesh = NULL;
+	moveState = MOVESTATE::STOP;
 }
 
 Jumper::Jumper(const char* jumperImageFileName) {
@@ -75,8 +76,8 @@ bool Jumper::hasIntersected(Platform& platform) {
 	double xDiff = cord.x - platform_cord.x;
 	double zDiff = (cord.z - JUMPERDEPTH / 2) - (platform_cord.z + PLATFORMDEPTH / 2);
 
-	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH) {
-		if (-PLATFORMDEPTH < zDiff && zDiff < 0) {
+	if (-JUMPERWIDTH < xDiff && xDiff < PLATFORMWIDTH / 2) {
+		if (-PLATFORMDEPTH / 4 < zDiff && zDiff < 0) {
 			return true;
 		}
 	}
@@ -182,4 +183,12 @@ bool Jumper::isOnPlatform() {
 
 void Jumper::setOnPlatform(bool flag) {
 	onPlatform = flag;
+}
+
+MOVESTATE Jumper::getMoveState() {
+	return moveState;
+}
+
+void Jumper::setMoveState(MOVESTATE iparam) {
+	moveState = iparam;
 }
