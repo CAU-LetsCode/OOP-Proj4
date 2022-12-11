@@ -1,93 +1,51 @@
-﻿cl : 명령줄 warning D9035: 'Gm' 옵션은 더 이상 사용되지 않으므로 이후 릴리스에서 제거될 예정입니다.
+﻿cl : 명령줄  warning D9035: 'Gm' 옵션은 더 이상 사용되지 않으므로 이후 릴리스에서 제거될 예정입니다.
   virtualLego.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(88,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(89,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(90,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(91,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(92,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(93,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(94,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(95,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(98,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(99,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(100,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(101,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(102,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(104,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(108,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(109,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(110,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(111,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(112,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(113,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(114,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(116,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(117,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(118,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(119,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(120,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(121,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(122,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(124,39): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(136,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\virtualLego.cpp(298,52): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Platform.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-  Map.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-  Jumper.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Jumper.cpp(95,30): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Jumper.cpp(121,8): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Jumper.cpp(122,8): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Goal.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Goal.cpp(21,30): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Goal.cpp(90,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Goal.cpp(91,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-  dxutil.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(58,9): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(110,9): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(134,5): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(158,9): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(578,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(628,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(709,17): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(728,9): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(743,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(758,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(767,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(779,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(840,5): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(860,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\dxutil.cpp(898,19): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(88,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(89,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(90,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(91,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(92,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(93,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(94,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(95,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(98,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(99,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(100,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(101,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(102,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(104,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(108,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(109,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(110,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(111,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(112,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(113,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(114,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(116,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(117,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(118,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(119,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(120,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(121,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(122,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(124,39): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(136,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(298,52): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Status.cpp
   DisplayText.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(15,28): warning C4154: 배열 식을 삭제했습니다. 포인터로 변환이 제공됩니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(43,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(45,74): warning C4305: '인수': '__int64'에서 'DWORD'(으)로 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(45,41): warning C4309: '인수': 상수 값이 잘립니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(48,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(49,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(50,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(51,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\DisplayText.cpp(57,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  d3dUtility.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-  d3dutil.cpp
-  d3dfont.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dfont.cpp(51,5): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  CLight.cpp
-C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(15,31): warning C4154: 배열 식을 삭제했습니다. 포인터로 변환이 제공됩니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(44,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(46,77): warning C4305: '인수': '__int64'에서 'DWORD'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(46,44): warning C4309: '인수': 상수 값이 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(49,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(50,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(51,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(52,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(58,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다...
 CLight.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
-  VirtualLego.vcxproj -> C:\Users\mj043\Desktop\객체지향프로그래밍\소스코드\OOP-Proj4\Debug\VirtualLego.exe
+  VirtualLego.vcxproj -> C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\Debug\VirtualLego.exe

@@ -9,11 +9,11 @@ Status::Status() {
 	this->isGameOver = false;
 }
 
-void Status::setStage(unsigned int numStage) {
+void Status::setNumStage(unsigned int numStage) {
 	this->numStage = numStage;
 }
 
-unsigned int Status::getStage() const noexcept {
+unsigned int Status::getNumStage() const noexcept {
 	return numStage;
 }
 
