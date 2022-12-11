@@ -63,7 +63,7 @@ D3DLIGHT9 lit;
 
 DisplayText displayText(Width, Height);
 
-Map map1(16), map2(16), map3(16);
+Map map1(16), map2(16), map3(16), map4(16);
 Goal goal1(1), goal2(2), goal3(3);
 
 // -----------------------------------------------------------------------------
@@ -123,13 +123,39 @@ bool Setup() {
 
     goal2.setPosition(20 + 6.7, 0, 1.6);
 
+    // stage 3
+    map3.setPosition(0, 40, 0, 0);
+    map3.setPosition(1, 40 + 0.5, 0, 0.3);
+    map3.setPosition(2, 40 + 1.0, 0, 0.6);
+    map3.setPosition(3, 40 + 1.5, 0, 0.3);
+    map3.setPosition(4, 40 + 1.5, 0, 0.9);
+    map3.setPosition(5, 40 + 2.0, 0, 0.6);
+    map3.setPosition(6, 40 + 1.0, 0, 1.2);
+    map3.setPosition(7, 40 + 2.0, 0, 1.2);
+    map3.setPosition(8, 40 + 2.5, 0, 1.5);
+    map3.setPosition(9, 40 + 3.0, 0, 1.8);
+    map3.setPosition(10, 40 + 3.5, 0, 2.1);
+    map3.setPosition(11, 40 + 4.7, 0, 0.6);
+    map3.setPosition(12, 40 + 5.2, 0, 0.9);
+    map3.setPosition(13, 40 + 5.7, 0, 0.6);
+    map3.setPosition(14, 40 + 6.2, 0, 0.9);
+    map3.setPosition(15, 40 + 6.7, 0, 1.2);
+
+    goal3.setPosition(40 + 6.7, 0, 1.6);
+
+    // final stage
+    map4.setPosition(0, 60, 0, 0);
+
     for (int i = 0; i < NUM_PLATFORM; i++) {
         map1.g_platforms[i].create(Device, d3d::GREEN);
         map2.g_platforms[i].create(Device, d3d::GREEN);
+        map3.g_platforms[i].create(Device, d3d::GREEN);
+        map4.g_platforms[i].create(Device, d3d::GREEN);
     }
 
     goal1.create(Device);
     goal2.create(Device);
+    goal3.create(Device);
 
     // create jumper
     if (!g_jumper.create(Device)) return false;
@@ -179,11 +205,14 @@ void Cleanup(void)
         //g_platforms[i].destroy();
         map1.g_platforms[i].destroy();
         map2.g_platforms[i].destroy();
+        map3.g_platforms[i].destroy();
+        map4.g_platforms[i].destroy();
     }
     g_light.destroy();
     displayText.destroy();
     goal1.destroy();
     goal2.destroy();
+    goal3.destroy();
 }
 
 // Update
@@ -204,10 +233,13 @@ bool Display(float timeDelta)
             //g_platforms[i].draw(Device, g_mWorld);
             map1.g_platforms[i].draw(Device, g_mWorld);
             map2.g_platforms[i].draw(Device, g_mWorld);
+            map3.g_platforms[i].draw(Device, g_mWorld);
+            map4.g_platforms[i].draw(Device, g_mWorld);
         }
 
         goal1.hitBy(g_jumper);
         goal2.hitBy(g_jumper);
+        goal3.hitBy(g_jumper);
 
         // intersect between jumper and platform
         if (isGameOver) {
@@ -218,7 +250,7 @@ bool Display(float timeDelta)
             g_jumper.jumperUpdate(timeDelta);
         }
         for (int i = 0; i < NUM_PLATFORM; i++) {
-            if ((g_jumper.hasIntersected(map1.g_platforms[i])) || (g_jumper.hasIntersected(map2.g_platforms[i]))) {
+            if ((g_jumper.hasIntersected(map1.g_platforms[i])) || (g_jumper.hasIntersected(map2.g_platforms[i])) || (g_jumper.hasIntersected(map3.g_platforms[i])) || (g_jumper.hasIntersected(map4.g_platforms[i]))) {
                 g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
                 if (g_jumper.isFirstTouch()) {
                     g_jumper.setFirstTouch(false);
@@ -243,6 +275,7 @@ bool Display(float timeDelta)
         // draw goal
         goal1.draw(Device, g_mWorld);
         goal2.draw(Device, g_mWorld);
+        goal3.draw(Device, g_mWorld);
 
         D3DXVECTOR3 m = g_jumper.getPosition();
         D3DXVECTOR3 pos(m.x, 3.0f, m.z);
