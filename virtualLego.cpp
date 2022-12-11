@@ -37,7 +37,7 @@
 #include "Jumper.h"
 #include "DisplayText.h"
 
-#define NUM_PLATFORM 2
+#define NUM_PLATFORM 7
 
 using std::array;
 
@@ -62,6 +62,7 @@ HWND window;
 IDirect3DDevice9* Device = NULL;
 
 vector<Platform> g_platforms(NUM_PLATFORM);
+
 vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
 CLight g_light;
@@ -93,6 +94,11 @@ bool Setup() {
 	// create platform
 	g_platforms[0].setPosition(0, 0, 0);
 	g_platforms[1].setPosition(-0.5, 0, 0.2);
+	g_platforms[2].setPosition(+0.5, 0, 0.5);
+	g_platforms[3].setPosition(-0.5, 0, 0.7);
+	g_platforms[4].setPosition(+0.5, 0, 0.7);
+	g_platforms[5].setPosition(-0.5, 0, 0.9);
+	g_platforms[6].setPosition(-0.5, 0, 1.1);
 
 	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, d3d::GREEN)) return false;
