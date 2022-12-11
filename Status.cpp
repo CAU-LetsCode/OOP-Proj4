@@ -5,7 +5,7 @@ using std::find_if;
 using std::exception;
 
 Status::Status() {
-	this->numStage = 0;
+	this->numStage = 1;
 	this->isGameOver = false;
 }
 

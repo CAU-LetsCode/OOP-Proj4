@@ -41,10 +41,16 @@ void DisplayText::destroy() {
 bool DisplayText::update() {
 
     this->jumperNumStage = "Stage " + std::to_string(status.getNumStage());
-    this->FontObjects[0]->DrawText(windowWidth / 2, 10, 0xff0000FF, this->jumperNumStage.c_str());
+
+    if (status.getNumStage() == 4) {
+        this->jumperNumStage = "Every stage cleared !";
+    }
+       
+    this->FontObjects[0]->DrawText(windowWidth / 2 - 20 , 10, 0xff0000FF, this->jumperNumStage.c_str());
+    
 
     this->FontObjects[1]->DrawText(60, 20, 0xff0000000, "Forest of Patience");
-    this->FontObjects[2]->DrawText(60, 50, 0xff0000FF, this->jumperName.c_str());
+    this->FontObjects[2]->DrawText(60, 50, 0xff0000FF, "OOP Final Project");
 
     this->FontObjects[3]->DrawText(windowWidth - 160, 20, 0xff000000, "Team14");
     this->FontObjects[4]->DrawText(windowWidth - 160, 50, 0xff000000, "JiMin");

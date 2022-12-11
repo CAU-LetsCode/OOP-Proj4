@@ -46,8 +46,8 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 
 // window size
-const int Width = 1920;
-const int Height = 1080;
+const int Width = 1700;
+const int Height = 900;
 
 HWND window;
 
@@ -293,7 +293,6 @@ bool Display(float timeDelta)
         displayText.updateRetry();
         status.setIsGameOver(true);
     }
-    status.setNumStage(1);
 
     return true;
 }
