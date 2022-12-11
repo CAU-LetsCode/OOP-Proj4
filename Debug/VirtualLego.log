@@ -1,4 +1,5 @@
 ﻿cl : 명령줄  warning D9035: 'Gm' 옵션은 더 이상 사용되지 않으므로 이후 릴리스에서 제거될 예정입니다.
+<<<<<<< HEAD
   DisplayText.cpp
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
@@ -11,3 +12,32 @@ C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(49,45): warning
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(50,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(51,45): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   VirtualLego.vcxproj -> C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\Debug\VirtualLego.exe
+=======
+  virtualLego.cpp
+C:\Users\김도엽\source\repos\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\김도엽\source\repos\OOP-Proj4\Status.h(19,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\김도엽\source\repos\OOP-Proj4\Status.h(53,65): warning C4290: 함수가 __declspec(nothrow)가 아님을 나타내려는 경우를 제외하고 C++ 예외 사양은 무시됩니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(98,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(99,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(100,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(101,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(102,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(103,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(104,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(105,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(109,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(110,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(111,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(112,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(113,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(123,34): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(88,6): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+C:\Users\김도엽\source\repos\OOP-Proj4\virtualLego.cpp(263,39): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  건너뛰고 있습니다... (관련된 변경 내용 없음)
+  Platform.cpp
+  Jumper.cpp
+  DisplayText.cpp
+  VirtualLego.vcxproj -> C:\Users\김도엽\source\repos\OOP-Proj4\Debug\VirtualLego.exe
+>>>>>>> c949daee2060a3ae549d933701834ec827f9704d
