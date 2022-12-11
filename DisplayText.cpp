@@ -1,6 +1,6 @@
 #include "DisplayText.h"
 
-
+extern Status status;
 
 DisplayText::DisplayText(const int windowWidth, const int windowHeight) {
     this->windowWidth = windowWidth;
@@ -40,7 +40,7 @@ void DisplayText::destroy() {
 
 bool DisplayText::update() {
 
-    this->jumperNumStage = "Stage " + std::to_string(this->status.getNumStage());
+    this->jumperNumStage = "Stage " + std::to_string(status.getNumStage());
     this->FontObjects[0]->DrawText(windowWidth / 2, 10, 0xff0000FF, this->jumperNumStage.c_str());
 
     this->FontObjects[1]->DrawText(60, 20, 0xff0000000, "Forest of Patience");

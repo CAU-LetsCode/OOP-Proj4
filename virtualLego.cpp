@@ -69,9 +69,6 @@ Goal goal1(1), goal2(2), goal3(3);
 // -----------------------------------------------------------------------------
 // Functions
 // -----------------------------------------------------------------------------
-void destroyAllLegoBlock(void)
-{
-}
 
 // initialization
 bool Setup() {
@@ -296,6 +293,7 @@ bool Display(float timeDelta)
         displayText.updateRetry();
         status.setIsGameOver(true);
     }
+    status.setNumStage(1);
 
     return true;
 }

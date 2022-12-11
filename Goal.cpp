@@ -3,6 +3,8 @@
 #include <cstdlib>
 
 
+extern Status status;
+
 #define M_RADIUS 0.14   
 #define PI 3.14159265
 #define M_HEIGHT 0.01
@@ -87,9 +89,18 @@ bool Goal::hasIntersected(Jumper& jumper) {
 
 void Goal::hitBy(Jumper& jumper) {
     if (this->hasIntersected(jumper)) {
-        if (stage == 1) jumper.setPosition(20, 0, 0.3);
-        if (stage == 2) jumper.setPosition(40, 0, 0.3);
-        if (stage == 3) jumper.setPosition(60, 0, 0.5);
+        if (stage == 1) {
+            jumper.setPosition(20, 0, 0.3);
+            status.setNumStage(2);
+        }
+        if (stage == 2) {
+            jumper.setPosition(40, 0, 0.3);
+            status.setNumStage(3);
+        }
+        if (stage == 3) {
+            jumper.setPosition(60, 0, 0.5);
+            status.setNumStage(4);
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 
 #include "d3dUtility.h"
 #include "Jumper.h"
+#include "Status.h"
 #include "string"
 
 using std::string;

@@ -2,49 +2,49 @@
   virtualLego.cpp
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(85,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(86,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(87,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(88,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(89,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(90,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(91,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(92,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(93,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(94,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(95,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(95,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(96,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(97,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(98,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(99,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(100,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(101,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(102,38): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(104,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(101,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(105,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(106,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(107,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(108,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(109,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(110,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(111,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(112,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(113,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(114,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(116,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(114,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(115,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(116,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(117,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(118,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(119,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(120,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(121,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(122,42): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(124,39): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(121,39): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(125,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(126,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(127,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(128,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(129,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(130,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(130,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(131,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(133,35): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(134,41): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(135,47): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(136,45): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(132,47): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(133,45): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(134,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(135,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(136,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(137,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(138,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
 C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(139,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(140,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(141,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(142,48): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(162,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(331,52): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(159,37): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\virtualLego.cpp(329,52): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   VirtualLego.vcxproj -> C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\Debug\VirtualLego.exe
