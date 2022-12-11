@@ -16,11 +16,6 @@ struct _VERTEX {
 };
 
 Goal::Goal(void) {
-    /*D3DXMatrixIdentity(&m_mLocal);
-    ZeroMemory(&m_mtrl, sizeof(m_mtrl));
-    m_radius = 0;
-    m_pSphereMesh = NULL;*/
-
     ZeroMemory(&m_mtrl, sizeof(m_mtrl)); // memset을 통해 모두 0으로 초기화
     this->m_radius = M_RADIUS;
     this->m_pSphereMesh = nullptr;
@@ -89,9 +84,10 @@ bool Goal::hasIntersected(Jumper& jumper) {
     return false;
 }
 
-void Goal::hitBy(Jumper& ball) {
-    if (this->hasIntersected(ball)) {
+void Goal::hitBy(Jumper& jumper) {
+    if (this->hasIntersected(jumper)) {
         this->setPosition(10000, 0, 10000);
+        jumper.setPosition(10, 0, 10.3);
     }
 }
 
