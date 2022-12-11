@@ -87,10 +87,6 @@ bool Setup() {
 
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
-	// sphere for debug
-	g_sphere.create(Device);
-	g_sphere.setPosition(0, 0, 0);
-
 	// create platform
 	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::GREEN)) return false;
@@ -158,9 +154,6 @@ bool Display(float timeDelta)
 		Device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00afafaf, 1.0f, 0);
 		Device->BeginScene();
 
-		// draw spherej for debug
-		g_sphere.draw(Device, g_mWorld);
-
 		// draw platforms
 		for (int i = 0; i < NUM_PLATFORM; i++) {
 			g_platforms[i].draw(Device, g_mWorld);
@@ -219,6 +212,7 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		case VK_SPACE:
 			if (g_jumper.isOnPlatform()) {
 				g_jumper.setVelocity(g_jumper.getVelocity_X(), 20);
+				g_jumper.setOnPlatform(false);
 			}
 			
 			break;
