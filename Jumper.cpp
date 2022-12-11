@@ -135,17 +135,17 @@ D3DXVECTOR3 Jumper::getPosition() const {
 	return org;
 }
 
-void Jumper::adjustPosition(Jumper& jumper, Platform platform) {
-	D3DXVECTOR3 jumper_cord = jumper.getPosition();
-
-	this->setPosition((x + this->pre_x) / 2, y, (z + this->pre_z) / 2);
-	jumper.setPosition((jumper_cord.x + jumper.pre_x) / 2, jumper_cord.y, (jumper_cord.z + jumper.pre_z) / 2);
-	if (this->hasIntersected(platform))
-	{
-		this->setPosition(this->pre_x, y, this->pre_z);
-		jumper.setPosition(jumper.pre_x, jumper_cord.y, jumper.pre_z);
-	}
-}
+//void Jumper::adjustPosition(Jumper& jumper, Platform platform) {
+//	D3DXVECTOR3 jumper_cord = jumper.getPosition();
+//
+//	this->setPosition((x + this->pre_x) / 2, y, (z + this->pre_z) / 2);
+//	jumper.setPosition((jumper_cord.x + jumper.pre_x) / 2, jumper_cord.y, (jumper_cord.z + jumper.pre_z) / 2);
+//	if (this->hasIntersected(platform))
+//	{
+//		this->setPosition(this->pre_x, y, this->pre_z);
+//		jumper.setPosition(jumper.pre_x, jumper_cord.y, jumper.pre_z);
+//	}
+//}
 
 void Jumper::setPosition(float x, float y, float z) {
 	D3DXMATRIX m;

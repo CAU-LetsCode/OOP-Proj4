@@ -55,7 +55,6 @@ public:
 	const D3DXMATRIX& getLocalTransform(void) const;
 	void setLocalTransform(const D3DXMATRIX& mLocal);
 	D3DXVECTOR3 getPosition() const;
-	void adjustPosition(Jumper& jumper, Platform platform);
 	void setPosition(float x, float y, float z);
 	bool isOnPlatform();
 	void setOnPlatform(bool flag);

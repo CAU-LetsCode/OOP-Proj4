@@ -23,7 +23,7 @@ private:
 
 	string turnStatus;
 
-	CD3DFont* FontObjects[9];
+	CD3DFont* FontObjects[10];
 
 public:
 	DisplayText(const int windowWidth, const int windowHeight);
@@ -34,8 +34,8 @@ public:
 
 	bool update();
 
-	bool updateRetry();
-	bool destroyRetry();
+	//bool updateRetry();
+	//bool destroyRetry();
 };
 
 #endif
