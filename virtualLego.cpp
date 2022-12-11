@@ -88,9 +88,13 @@ bool Setup() {
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
+	g_platforms[0].setPosition(0, 0, 0);
+	//g_platforms[1].setPosition(-0.5, 0, 0.5);
+
 	for (int i = 0; i < NUM_PLATFORM; i++) {
-		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::GREEN)) return false;
-		g_platforms[i].setPosition(0, 0, 0);
+		if (!g_platforms[i].create(Device, d3d::GREEN)) return false;
+		D3DXVECTOR3 m = g_platforms[i].getPosition();
+		g_platforms[i].setPosition(m.x, m.y, m.z);
 	}
 
 	// create jumper

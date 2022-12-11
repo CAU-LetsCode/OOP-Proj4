@@ -5,7 +5,7 @@
 
 #define PLATFORMWIDTH 0.4f
 #define PLATFORMHEIGHT 0.1f
-#define PLATFORMDEPTH 0.1f
+#define PLATFORMDEPTH 0.05f
 #define LTX(x) x - PLATFORMWIDTH / 2	// x of Left Top point
 #define LTZ(z) z + PLATFORMHEIGHT / 2	// z of Left Top point
 
@@ -22,9 +22,8 @@ private:
 
 public:
     Platform(void);
-    Platform(float iwidth, float iheight, float idepth, D3DXCOLOR color);
     ~Platform(void);
-    bool create(IDirect3DDevice9* pDevice, float iwidth, float iheight, float idepth, D3DXCOLOR color);
+    bool create(IDirect3DDevice9* pDevice, D3DXCOLOR color);
     void destroy(void);
     void draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld);
     void setPosition(float x, float y, float z);
