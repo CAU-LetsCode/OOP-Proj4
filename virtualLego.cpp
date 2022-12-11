@@ -200,7 +200,7 @@ bool Display(float timeDelta)
             map1.g_platforms[i].draw(Device, g_mWorld);
         }
 
-        
+        goal1.hitBy(g_jumper);
 
         // intersect between jumper and platform
         if (isGameOver) {
