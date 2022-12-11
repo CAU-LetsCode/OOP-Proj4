@@ -63,6 +63,8 @@ IDirect3DDevice9* Device = NULL;
 
 #define NUM_PLATFORM 16
 
+bool isGameOver = false;
+
 Jumper g_jumper;
 CLight g_light;
 CSphere g_sphere;
@@ -194,7 +196,13 @@ bool Display(float timeDelta)
         }
 
         // intersect between jumper and platform
-        g_jumper.jumperUpdate(timeDelta);
+        if (isGameOver) {
+            g_jumper.setPosition(0, 0.01, 3);
+            g_jumper.setVelocity(0, 0);
+        }
+        else {
+            g_jumper.jumperUpdate(timeDelta);
+        }
         for (int i = 0; i < NUM_PLATFORM; i++) {
             if (g_jumper.hasIntersected(map1.g_platforms[i])) {
                 g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
@@ -232,8 +240,9 @@ bool Display(float timeDelta)
         Device->SetTexture(0, NULL);
     }
 
-    // game over
-    //todo
+    if (!isGameOver && g_jumper.getPosition().z < -3) {
+        isGameOver = true;
+    }
 
     return true;
 }
@@ -284,6 +293,18 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                 g_jumper.setVelocity(0.2, g_jumper.getVelocity_Z());
                 g_jumper.setMoveState(MOVESTATE::RIGHT);
             }
+            break;
+        case 0x59:  // Y
+            if (isGameOver) {
+                isGameOver = false;
+            }
+            break;
+        case 0x4E:  // N
+            if (isGameOver) {
+                //gameover
+                //todo
+            }
+            break;
         }
         break;
     }
