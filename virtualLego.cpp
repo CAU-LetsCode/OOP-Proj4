@@ -71,8 +71,7 @@ Player players[2] = { Player(1), Player(2) };
 vector<Player*> playerVec = { &players[0], &players[1] };
 Status status(playerVec);
 
-DisplayText displayText(584, 342);
-
+DisplayText displayText(Width, Height);
 
 // -----------------------------------------------------------------------------
 // Functions
@@ -89,7 +88,7 @@ bool Setup() {
 	D3DXMatrixIdentity(&g_mView);
 	D3DXMatrixIdentity(&g_mProj);
 
-	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
+	if (!displayText.create("Times New Roman", 16, Device)) return false;
 
 	// create platform
 	g_platforms[0].setPosition(0, 0, 0);
@@ -149,6 +148,7 @@ void Cleanup(void)
 		g_platforms[i].destroy();
 	}
 	g_light.destroy();
+	displayText.destory();
 }
 
 // Update
@@ -161,6 +161,8 @@ bool Display(float timeDelta)
 	{
 		Device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00afafaf, 1.0f, 0);
 		Device->BeginScene();
+
+		displayText.update();
 
 		// draw platforms
 		for (int i = 0; i < NUM_PLATFORM; i++) {
