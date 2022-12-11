@@ -94,12 +94,12 @@ bool Setup() {
 
 	// create platform
 	g_platforms[0].setPosition(0, 0, 0);
-	g_platforms[1].setPosition(-0.5, 0, 0.2);
-	g_platforms[2].setPosition(+0.5, 0, 0.5);
-	g_platforms[3].setPosition(-0.5, 0, 0.7);
-	g_platforms[4].setPosition(+0.5, 0, 0.7);
-	g_platforms[5].setPosition(-0.5, 0, 0.9);
-	g_platforms[6].setPosition(-0.5, 0, 1.1);
+	g_platforms[1].setPosition(-0.95, 0, 0.3);
+	g_platforms[2].setPosition(+0.95, 0, 0.3);
+	g_platforms[3].setPosition(-1.9, 0, 0.7);
+	g_platforms[4].setPosition(+1.9, 0, 0.7);
+	g_platforms[5].setPosition(-2.05, 0, 0.9);
+	g_platforms[6].setPosition(-2.05, 0, 1.9);
 
 	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, d3d::GREEN)) return false;
