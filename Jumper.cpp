@@ -15,7 +15,9 @@ Jumper::Jumper(void) {
 	ZeroMemory(&m_mtrl, sizeof(m_mtrl));
 	v_x = v_z = 0;
 	onPlatform = false;
+	firstTouch = true;
 	m_pJumperMesh = NULL;
+	whereIdx = -1;
 	moveState = MOVESTATE::STOP;
 }
 
@@ -70,6 +72,8 @@ void Jumper::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 }
 
 bool Jumper::hasIntersected(Platform& platform) {
+	if (v_z > 0) return false;
+	
 	D3DXVECTOR3 cord = this->getPosition();
 	D3DXVECTOR3 platform_cord = platform.getPosition();
 
@@ -193,4 +197,12 @@ MOVESTATE Jumper::getMoveState() {
 
 void Jumper::setMoveState(MOVESTATE iparam) {
 	moveState = iparam;
+}
+
+bool Jumper::isFirstTouch() {
+	return firstTouch;
+}
+
+void Jumper::setFirstTouch(bool flag) {
+	firstTouch = flag;
 }
