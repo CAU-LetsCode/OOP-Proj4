@@ -37,9 +37,6 @@
 #include "Jumper.h"
 
 #define NUM_PLATFORM 1
-#define PLATFORMWIDTH 0.2
-#define PLATFORMHEIGHT 0.05
-#define PLATFORMDEPTH 0.05
 
 using std::array;
 
@@ -67,6 +64,7 @@ vector<Platform> g_platforms(NUM_PLATFORM);
 vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
 Jumper g_jumper;
 CLight g_light;
+CSphere g_sphere;
 
 Player players[2] = { Player(1), Player(2) };
 vector<Player*> playerVec = { &players[0], &players[1] };
@@ -89,9 +87,13 @@ bool Setup() {
 
 	//if (!displayGameStatus.create("Times New Roman", 16, Device)) return false;
 
+	// sphere for debug
+	g_sphere.create(Device);
+	g_sphere.setPosition(0, 0, 0);
+
 	// create platform
 	for (int i = 0; i < NUM_PLATFORM; i++) {
-		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::RED)) return false;
+		if (!g_platforms[i].create(Device, PLATFORMWIDTH, PLATFORMHEIGHT, PLATFORMDEPTH, d3d::GREEN)) return false;
 		g_platforms[i].setPosition(0, 0, 0);
 	}
 
@@ -156,6 +158,9 @@ bool Display(float timeDelta)
 		Device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00afafaf, 1.0f, 0);
 		Device->BeginScene();
 
+		// draw spherej for debug
+		g_sphere.draw(Device, g_mWorld);
+
 		// draw platforms
 		for (int i = 0; i < NUM_PLATFORM; i++) {
 			g_platforms[i].draw(Device, g_mWorld);
@@ -163,6 +168,12 @@ bool Display(float timeDelta)
 
 		// intersect between jumper and platform
 		g_jumper.jumperUpdate(timeDelta);
+		for (int i = 0; i < NUM_PLATFORM; i++) {
+			if (g_jumper.hasIntersected(g_platforms[i])) {
+				g_jumper.setVelocity(g_jumper.getVelocity_X(), 0);
+				g_jumper.setOnPlatform(true);
+			}
+		}
 
 		// draw jumper
 		g_jumper.draw(Device, g_mWorld);

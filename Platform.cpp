@@ -85,6 +85,6 @@ void Platform::setLocalTransform(const D3DXMATRIX& mLocal) { m_mLocal = mLocal; 
 //void adjustPosition(CSphere& ball);   //todo
 
 D3DXVECTOR3 Platform::getPosition() const {
-    D3DXVECTOR3 org(x, y, z);
+    D3DXVECTOR3 org(this->x, this->y, this->z);
     return org;
 }

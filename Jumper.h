@@ -3,8 +3,9 @@
 #include "d3dUtility.h"
 #include "Platform.h"
 
-#define JUMPERWIDTH	50
-#define JUMPERHEIGHT 50
+#define JUMPERWIDTH	0.2f
+#define JUMPERHEIGHT 0.1f
+#define JUMPERDEPTH 0.2f
 #define LBX(x) x - JUMPERWIDTH / 2	// x of Left Bottom point
 #define LBZ(z) z - JUMPERHEIGHT / 2	// z of Left Botton point
 
@@ -15,6 +16,7 @@ private:
 	float x, y, z;	// center cord
 	float v_x, v_z;
 	float pre_x, pre_z;
+	bool onPlatform;
 
 	string jumperImageFileName = "0";
 
@@ -40,6 +42,8 @@ public:
 	const D3DXMATRIX& getLocalTransform(void) const;
 	void setLocalTransform(const D3DXMATRIX& mLocal);
 	D3DXVECTOR3 getPosition() const;
-	void adjustPosition(Jumper& jumper);	// todo
+	void adjustPosition(Jumper& jumper, Platform platform);
 	void setPosition(float x, float y, float z);
+	bool isOnPlatform();
+	void setOnPlatform(bool flag);
 };
