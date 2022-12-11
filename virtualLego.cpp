@@ -37,7 +37,7 @@
 #include "Jumper.h"
 #include "DisplayText.h"
 
-#define NUM_PLATFORM 7
+
 
 using std::array;
 
@@ -53,13 +53,14 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 
 // window size
-const int Width = 1024;
-const int Height = 768;
+const int Width = 1920;
+const int Height = 1080;
 
 HWND window;
 
 IDirect3DDevice9* Device = NULL;
 
+#define NUM_PLATFORM 16
 vector<Platform> g_platforms(NUM_PLATFORM);
 
 vector<array<float, 3>> g_platform_cord(NUM_PLATFORM);
@@ -94,12 +95,22 @@ bool Setup() {
 
 	// create platform
 	g_platforms[0].setPosition(0, 0, 0);
-	g_platforms[1].setPosition(-0.9, 0, 0.3);
-	g_platforms[2].setPosition(+0.9, 0, 0.3);
-	g_platforms[3].setPosition(-1.8, 0, 0.6);
-	g_platforms[4].setPosition(+1.8, 0, 0.6);
-	g_platforms[5].setPosition(-2.7, 0, 0.9);
-	g_platforms[6].setPosition(-2.7, 0, 0.9);
+	g_platforms[1].setPosition(-0.5, 0, 0.3);
+	g_platforms[2].setPosition(+0.5, 0, 0.3);
+	g_platforms[3].setPosition(-1.0, 0, 0.6);
+	g_platforms[4].setPosition(+1.0, 0, 0.6);
+	g_platforms[5].setPosition(-1.5, 0, 0.9);
+	g_platforms[6].setPosition(+1.5, 0, 0.9);
+	g_platforms[7].setPosition(-2.0, 0, 1.2);
+	g_platforms[8].setPosition(+2.0, 0, 1.2);
+
+	g_platforms[9].setPosition(+1.5, 0, 1.5);
+	g_platforms[10].setPosition(-1.5, 0, 1.5);
+	g_platforms[11].setPosition(+1.0, 0, 1.8);
+	g_platforms[12].setPosition(-1.0, 0, 1.8);
+	g_platforms[13].setPosition(+0.5, 0, 2.1);
+	g_platforms[14].setPosition(-0.5, 0, 2.1);
+	g_platforms[15].setPosition(+0.0, 0, 2.4);
 
 	for (int i = 0; i < NUM_PLATFORM; i++) {
 		if (!g_platforms[i].create(Device, d3d::GREEN)) return false;
