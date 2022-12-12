@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CLight" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAAEEEAAAAAgAIAAEAAAAAAAAAAAABAAAAABCQ=</HashCode>
+      <FileName>CLight.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayText" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEBAAAAAAABAAAAAgAAAEAAAAAAAAAFAABAAAAEAIA=</HashCode>
+      <FileName>DisplayText.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goal" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARIAoREAAEAYgAAAAAIAAEQKAAAACAABCABAgIAAAAA=</HashCode>
+      <FileName>Goal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jumper" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAIBAIEECWlAAACAIAAEAKAAAEAAgAAABlAQEAJAA=</HashCode>
+      <FileName>Jumper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAEADAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Platform" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIBAAAEAAABQAQAIAAEAKAAAAQAAACAhgIQAAAAA=</HashCode>
+      <FileName>Platform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Status" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAAEAAABAAAAAAAAAACAAAAAABAAEAAAAAAAAAA=</HashCode>
+      <FileName>Status.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

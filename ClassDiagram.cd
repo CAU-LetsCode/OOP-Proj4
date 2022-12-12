@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical" MembersFormat="NameAndType">
+  <Class Name="CLight" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAAEEEAAAAAgAIAAEAAAAAAAAAAAABAAAAABCQ=</HashCode>
+      <FileName>CLight.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3DFont" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBQAAACAAokCAAAALAAEAAACAAAgAgAABIAAEAAAIYA=</HashCode>
+      <FileName>d3dfont.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3DArcBall" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAEAiEAQQAAAAgAEQCAQAAAgAAIAQCALAAiAAgA=</HashCode>
+      <FileName>d3dutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CD3DCamera" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>C0AAAEQAABAAAgABAABAAACAACBAAAFIAMDggIABAAA=</HashCode>
+      <FileName>d3dutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayText" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEBAAAAAAABAAAAAgAAAEAAAAAAAAAFAABAAAAEAIA=</HashCode>
+      <FileName>DisplayText.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CArrayList" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgIAAAAAAAAAABAAAAIABAQEAAAAAAAAAIAAAABRAAA=</HashCode>
+      <FileName>dxutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goal" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARIAoREAAEAYgAAAAAIAAEQKAAAACAABCABAgIAAAAA=</HashCode>
+      <FileName>Goal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jumper" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAIBAIEECWlAAACAIAAEAKAAAEAAgAAABlAQEAJAA=</HashCode>
+      <FileName>Jumper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAEADAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>Map.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Platform" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIBAAAEAAABQAQAIAAEAKAAAAQAAACAhgIQAAAAA=</HashCode>
+      <FileName>Platform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Status" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAAEAAABAAAAAAAAAACAAAAAABAAEAAAAAAAAAA=</HashCode>
+      <FileName>Status.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="FONT2DVERTEX" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAQA=</HashCode>
+      <FileName>d3dfont.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FONT3DVERTEX" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAQA=</HashCode>
+      <FileName>d3dfont.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_VERTEX" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQE=</HashCode>
+      <FileName>Goal.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::BoundingBox" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAACAAAAAAEABAAAAAAAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::BoundingSphere" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::Ray" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="LPShellExecute" Collapsed="true">
+    <Position X="0.5" Y="7" Width="9.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dxutil.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="TIMER_COMMAND" Collapsed="true">
+    <Position X="4" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAKAAAAAAAAAAAAgAAAYAAAAAEAAAAAAA=</HashCode>
+      <FileName>dxutil.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ArrayListType" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>dxutil.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MOVESTATE" Collapsed="true">
+    <Position X="2.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Jumper.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
