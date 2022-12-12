@@ -346,6 +346,7 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case 0x59:  // Y
             if (status.getIsGameOver()) {
                 status.setIsGameOver(false);
+                status.setNumStage(1);
             }
             break;
         case 0x4E:  // N

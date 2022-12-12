@@ -21,9 +21,9 @@ private:
 	string jumperName;
 	string jumperNumStage;
 
-	string turnStatus;
+	string finalScoreStatus;
 
-	CD3DFont* FontObjects[10];
+	CD3DFont* FontObjects[11];
 
 public:
 	DisplayText(const int windowWidth, const int windowHeight);
