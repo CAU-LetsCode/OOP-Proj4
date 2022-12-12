@@ -1,19 +1,10 @@
-﻿cl : 명령줄  warning D9035: 'Gm' 옵션은 더 이상 사용되지 않으므로 이후 릴리스에서 제거될 예정입니다.
-  DisplayText.cpp
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(15,31): warning C4154: 배열 식을 삭제했습니다. 포인터로 변환이 제공됩니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(49,52): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(52,77): warning C4305: '인수': '__int64'에서 'DWORD'(으)로 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(52,44): warning C4309: '인수': 상수 값이 잘립니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(55,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(56,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(57,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(58,48): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(61,79): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(61,56): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(62,79): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(62,56): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(65,79): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\DisplayText.cpp(65,56): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  VirtualLego.vcxproj -> C:\Users\jimin\Desktop\repos\hyun-hang\OOP-Proj4\Debug\VirtualLego.exe
+﻿cl : 명령줄 warning D9035: 'Gm' 옵션은 더 이상 사용되지 않으므로 이후 릴리스에서 제거될 예정입니다.
+  Jumper.cpp
+C:\Users\mj043\Desktop\OOP-Proj4\d3dUtility.h(23,1): warning C4005: 'INFINITY': 매크로 재정의
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_math.h(88): message : 'INFINITY'의 이전 정의를 참조하십시오.
+C:\Users\mj043\Desktop\OOP-Proj4\Jumper.cpp(101,30): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\mj043\Desktop\OOP-Proj4\Jumper.cpp(119,14): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\mj043\Desktop\OOP-Proj4\Jumper.cpp(120,41): warning C4244: '인수': 'double'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\mj043\Desktop\OOP-Proj4\Jumper.cpp(135,8): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\mj043\Desktop\OOP-Proj4\Jumper.cpp(136,8): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  VirtualLego.vcxproj -> C:\Users\mj043\Desktop\OOP-Proj4\Debug\VirtualLego.exe

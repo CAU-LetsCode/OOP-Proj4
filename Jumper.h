@@ -37,6 +37,9 @@ private:
 	D3DMATERIAL9 m_mtrl;
 	ID3DXMesh* m_pJumperMesh;
 
+	D3DXMATRIX boxRotate;
+	D3DXMATRIX tmp;
+
 public:
 	Jumper(void);
 	Jumper(const char* jumperImageFileName);
