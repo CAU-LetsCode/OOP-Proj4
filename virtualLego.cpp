@@ -46,8 +46,8 @@ D3DXMATRIX g_mProj;
 // -----------------------------------------------------------------------------
 
 // window size
-const int Width = 1700;
-const int Height = 900;
+const int Width = 1980;
+const int Height = 1080;
 
 HWND window;
 
@@ -291,6 +291,7 @@ bool Display(float timeDelta)
 
     if (!status.getIsGameOver() && g_jumper.getPosition().z < -3) {
         status.setIsGameOver(true);
+        status.setNumStage(1);
     }
 
     return true;
@@ -346,7 +347,7 @@ LRESULT CALLBACK d3d::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         case 0x59:  // Y
             if (status.getIsGameOver()) {
                 status.setIsGameOver(false);
-                status.setNumStage(1);
+                
             }
             break;
         case 0x4E:  // N
