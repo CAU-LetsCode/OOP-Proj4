@@ -59,7 +59,7 @@ bool DisplayText::update() {
 
     if (status.getIsGameOver() == true) {
         this->finalScoreStatus = "Your final Score is Stage " + std::to_string(status.getNumStage()) + " !";
-        this->FontObjects[10]->DrawText(windowWidth / 2 - 100, windowHeight / 2 - 350, 0xff0000FF, this->finalScoreStatus.c_str());
+        this->FontObjects[10]->DrawText(windowWidth / 2 - 100, windowHeight / 2 - 350, 0xff000000, this->finalScoreStatus.c_str());
         this->FontObjects[7]->DrawText(windowWidth / 2 - 90, windowHeight / 2 - 250 , 0xffff0000, "Do You wanna Retry ?");
         this->FontObjects[8]->DrawText(windowWidth / 2 - 50, windowHeight / 2 - 200, 0xffff0000, "[ Y / ESC ]");
     }
