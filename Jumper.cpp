@@ -19,6 +19,8 @@ Jumper::Jumper(void) {
 	m_pJumperMesh = NULL;
 	whereIdx = -1;
 	moveState = MOVESTATE::STOP;
+
+	D3DXMatrixIdentity(&this->boxRotate);
 }
 
 Jumper::Jumper(const char* jumperImageFileName) {
@@ -66,6 +68,9 @@ void Jumper::draw(IDirect3DDevice9* pDevice, const D3DXMATRIX& mWorld) {
 
 	pDevice->SetTransform(D3DTS_WORLD, &mWorld);
 	pDevice->MultiplyTransform(D3DTS_WORLD, &m_mLocal);
+
+	pDevice->MultiplyTransform(D3DTS_WORLD, &boxRotate);
+
 	pDevice->SetTexture(0, Tex);
 	pDevice->SetMaterial(&m_mtrl);
 	m_pJumperMesh->DrawSubset(0);
@@ -81,6 +86,7 @@ bool Jumper::hasIntersected(Platform& platform) {
 	double zDiff = (cord.z - JUMPERDEPTH / 2) - (platform_cord.z + PLATFORMDEPTH / 2);
 
 	double xBoundary = PLATFORMWIDTH / 2 + JUMPERWIDTH / 2;
+		
 
 	if (-xBoundary < xDiff && xDiff < xBoundary) {
 		if (-PLATFORMDEPTH < zDiff && zDiff < 0) {
@@ -107,6 +113,14 @@ void Jumper::jumperUpdate(float timeDiff) {
 	float tX = cord.x + TIME_SCALE * timeDiff * v_x;
 	float tZ = cord.z + TIME_SCALE * timeDiff * v_z;
 	this->setPosition(tX, cord.y, tZ);
+
+	//D3DXMATRIX tmp;
+	D3DXVECTOR3 c(0, this->v_x, 0);
+	float force = sqrt(pow(this->v_x, 2));
+	D3DXMatrixRotationAxis(&tmp, &c, force * 0.018);
+	if (!this->isOnPlatform())
+		boxRotate *= tmp;
+
 }
 
 double Jumper::getVelocity_X() {
@@ -135,17 +149,6 @@ D3DXVECTOR3 Jumper::getPosition() const {
 	return org;
 }
 
-//void Jumper::adjustPosition(Jumper& jumper, Platform platform) {
-//	D3DXVECTOR3 jumper_cord = jumper.getPosition();
-//
-//	this->setPosition((x + this->pre_x) / 2, y, (z + this->pre_z) / 2);
-//	jumper.setPosition((jumper_cord.x + jumper.pre_x) / 2, jumper_cord.y, (jumper_cord.z + jumper.pre_z) / 2);
-//	if (this->hasIntersected(platform))
-//	{
-//		this->setPosition(this->pre_x, y, this->pre_z);
-//		jumper.setPosition(jumper.pre_x, jumper_cord.y, jumper.pre_z);
-//	}
-//}
 
 void Jumper::setPosition(float x, float y, float z) {
 	D3DXMATRIX m;
