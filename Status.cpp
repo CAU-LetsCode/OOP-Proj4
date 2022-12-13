@@ -6,6 +6,7 @@ using std::exception;
 
 Status::Status() {
 	this->numStage = 1;
+	this->numFinalStage = 1;
 	this->isGameOver = false;
 }
 
@@ -15,6 +16,14 @@ void Status::setNumStage(unsigned int numStage) {
 
 unsigned int Status::getNumStage() const noexcept {
 	return numStage;
+}
+
+void Status::setNumFinalStage() {
+	numFinalStage = numStage;
+}
+
+unsigned int Status::getNumFinalStage() const noexcept {
+	return numFinalStage;
 }
 
 

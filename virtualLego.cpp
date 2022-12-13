@@ -291,6 +291,7 @@ bool Display(float timeDelta)
 
     if (!status.getIsGameOver() && g_jumper.getPosition().z < -3) {
         status.setIsGameOver(true);
+        status.setNumFinalStage();
         status.setNumStage(1);
     }
 
