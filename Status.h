@@ -14,6 +14,7 @@ class Status
 {
 private:
 	unsigned int numStage;
+	unsigned int numFinalStage;
 	bool isGameOver;
 
 public:
@@ -21,6 +22,8 @@ public:
 
 	void setNumStage(unsigned int numStage);
 	unsigned int getNumStage() const noexcept;
+	void setNumFinalStage();
+	unsigned int getNumFinalStage() const noexcept;
 
 	void setIsGameOver(bool isGameOver);
 	bool getIsGameOver() const noexcept;
